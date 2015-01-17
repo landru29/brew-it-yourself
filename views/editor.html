@@ -1,0 +1,49 @@
+<div class="recipe-header">
+    <span class="save-button" ng-click="save()" title="Save this recipe"></span>
+    <span class="open-file-button" ng-click="open()" title="Open recipe"></span>
+    <span class="new-button" ng-click="newRecipe()" title="New recipe"></span>
+    <span class="clone-button" ng-click="cloneRecipe()" title="Clone recipe"></span>
+    <span class="delete-button" ng-click="deleteRecipe()" title="Delete recipe"></span>
+    <ul>
+        <li>Name: <a href="#" editable-text="recipe.name">{{ recipe.name || "No name" }}</a></li>
+        <li>Author: <a href="#" editable-text="recipe.author">{{ recipe.author || "No name" }}</a></li>
+        <li>Date: <a href="#" editable-date="recipe.date">{{ recipe.date | date : "dd/MM/yyyy" }}</a></li>
+    </ul>
+</div>
+<div class="step-list">
+    <ul class="step-list" as-sortable="stepSortOptions" ng-model="recipe.steps">
+        <li ng-repeat="step in recipe.steps" as-sortable-item>
+            <div class="step" as-sortable-item-handle>
+                <div class="title" >
+                    <a href="#" editable-text="step.name" title="name">{{ step.name || "No name" }}</a>
+                    <span class="close-button" ng-click="deleteStep($index)"></span>
+                </div>
+                <div class="lasting">
+                    <label>Lasting:</label> 
+                    <a href="#" editable-number="step.lasting.days" title="days">{{ step.lasting.days }} days</a>
+                    -
+                    <a href="#" editable-number="step.lasting.hours" title="time">{{ step.lasting.hours }} hours</a>
+                    -
+                    <a href="#" editable-number="step.lasting.minutes" title="time">{{ step.lasting.minutes }} minutes</a>
+                </div>
+                <div class="temperature">
+                    <label>temperature:</label>
+                    <a href="#" editable-number="step.temperature" title="temperature">{{ step.temperature }} °C</a>
+                </div>
+                <div class="ingredients">
+                    <label>Ingredients:</label>
+                    <div>
+                        <ul>
+                            <li ng-repeat="ingredient in step.ingredients" class="ingredient-{{ingredient.type}}"><span class="ingredient">{{ingredient.name}}</span><span class="suppr-button" ng-click="deleteIngredient(step, $index)"></span></li>
+                            <li class="dummy" ng-click="insertIngredient(step)">New ingredient</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="dummy-step" ng-click="pushStep()">
+        New Step
+    </div>
+</div>

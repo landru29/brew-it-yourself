@@ -1,0 +1,2029 @@
+{
+    "fermentable": [
+      {
+        "name": "Bohemian Pilsner",
+        "type": "Grain",
+        "yield": "81",
+        "color": "2.0",
+        "recommendMash": "true"
+      },
+      {
+        "name": "Brown Sugar (Light)",
+        "type": "Sugar",
+        "yield": "100",
+        "color": "8.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Cara Malt",
+        "type": "Grain",
+        "yield": "75",
+        "color": "15.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Caraamber",
+        "type": "Grain",
+        "yield": "78",
+        "color": "27.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Caraaroma",
+        "type": "Grain",
+        "yield": "77",
+        "color": "130.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Carafa I",
+        "type": "Grain",
+        "yield": "70",
+        "color": "330.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Carafa II",
+        "type": "Grain",
+        "yield": "70",
+        "color": "425.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Carafa III",
+        "type": "Grain",
+        "yield": "70",
+        "color": "520.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Carafoam",
+        "type": "Grain",
+        "yield": "81",
+        "color": "2.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Carahell",
+        "type": "Grain",
+        "yield": "79",
+        "color": "10.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Caramunich I",
+        "type": "Grain",
+        "yield": "78",
+        "color": "35.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Caramunich II",
+        "type": "Grain",
+        "yield": "78",
+        "color": "45.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Caramunich III",
+        "type": "Grain",
+        "yield": "78",
+        "color": "57.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Carared",
+        "type": "Grain",
+        "yield": "78",
+        "color": "18.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Carawheat",
+        "type": "Grain",
+        "yield": "77",
+        "color": "44.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Corn Syrup",
+        "type": "Sugar",
+        "yield": "78",
+        "color": "0.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Crystal (Extra Dark) ",
+        "type": "Grain",
+        "yield": "71",
+        "color": "173.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Crystal Malt",
+        "type": "Grain",
+        "yield": "75",
+        "color": "65.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Crystal Malt (Dark)",
+        "type": "Grain",
+        "yield": "72",
+        "color": "150.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Crystal Malt (Pale)",
+        "type": "Grain",
+        "yield": "75",
+        "color": "30.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Crystal Rye Malt",
+        "type": "Grain",
+        "yield": "75",
+        "color": "75.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Golden Promise",
+        "type": "Grain",
+        "yield": "81",
+        "color": "2.0",
+        "recommendMash": "true"
+      },
+      {
+        "name": "Golden Syrup",
+        "type": "Sugar",
+        "yield": "100",
+        "color": "50.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Lager Malt",
+        "type": "Grain",
+        "yield": "83",
+        "color": "2.0",
+        "recommendMash": "true"
+      },
+      {
+        "name": "Marris Otter",
+        "type": "Grain",
+        "yield": "83",
+        "color": "3.0",
+        "recommendMash": "true"
+      },
+      {
+        "name": "Meladoidin Malt",
+        "type": "Grain",
+        "yield": "81",
+        "color": "27.0",
+        "recommendMash": "true"
+      },
+      {
+        "name": "Munich 10L Malt",
+        "type": "Grain",
+        "yield": "77",
+        "color": "10.0",
+        "recommendMash": "true"
+      },
+      {
+        "name": "Munich 20L Malt",
+        "type": "Grain",
+        "yield": "75",
+        "color": "20.0",
+        "recommendMash": "true"
+      },
+      {
+        "name": "Optic",
+        "type": "Grain",
+        "yield": "80",
+        "color": "3.0",
+        "recommendMash": "true"
+      },
+      {
+        "name": "Pale Ale",
+        "type": "Grain",
+        "yield": "85",
+        "color": "3.0",
+        "recommendMash": "true"
+      },
+      {
+        "name": "Pale Chocolate Malt",
+        "type": "Grain",
+        "yield": "71",
+        "color": "250.0",
+        "recommendMash": "false"
+      },
+      {
+        "name": "Pilsner",
+        "type": "Grain",
+        "yield": "81",
+        "color": "2.0",
+        "recommendMash": "true"
+      },
+      {
+        "name": "Smoked Malt",
+        "type": "Grain",
+        "yield": "81",
+        "color": "2.0",
+        "recommendMash": "true"
+      },
+      {
+        "name": "Acide (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "58",
+        "addAfterBoil": "false",
+        "color": "2.0"
+      },
+      {
+        "name": "Amber (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "80",
+        "addAfterBoil": "false",
+        "color": "50.0"
+      },
+      {
+        "name": "Biscuit (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "79",
+        "addAfterBoil": "false",
+        "color": "30.0"
+      },
+      {
+        "name": "Black (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "71",
+        "addAfterBoil": "false",
+        "color": "660.0"
+      },
+      {
+        "name": "Brown (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "71",
+        "addAfterBoil": "false",
+        "color": "75.0"
+      },
+      {
+        "name": "Chocolat (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "71",
+        "addAfterBoil": "false",
+        "color": "500.0"
+      },
+      {
+        "name": "Froment Chocolat",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "74",
+        "addAfterBoil": "false",
+        "color": "375.0"
+      },
+      {
+        "name": "Froment Blond (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "80",
+        "addAfterBoil": "false",
+        "color": "2.0"
+      },
+      {
+        "name": "Tourbé (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "74",
+        "addAfterBoil": "false",
+        "color": "2.0"
+      },
+      {
+        "name": "Vienna (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "78",
+        "addAfterBoil": "false",
+        "color": "4.0"
+      },
+      {
+        "name": "Munich (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "80",
+        "addAfterBoil": "false",
+        "color": "9.0"
+      },
+      {
+        "name": "Seigle Blond (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "63",
+        "addAfterBoil": "false",
+        "color": "3.0"
+      },
+      {
+        "name": "Avoine Blond (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "80",
+        "addAfterBoil": "false",
+        "color": "2.0"
+      },
+      {
+        "name": "Mild Ale (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "80",
+        "addAfterBoil": "false",
+        "color": "4.0"
+      },
+      {
+        "name": "Caragold",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "74",
+        "addAfterBoil": "false",
+        "color": "61.0"
+      },
+      {
+        "name": "Froment, Crystal (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "75",
+        "addAfterBoil": "false",
+        "color": "63.0"
+      },
+      {
+        "name": "Seigle, Crystal (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "75",
+        "addAfterBoil": "false",
+        "color": "75.0"
+      },
+      {
+        "name": "Orge Grillée",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "69",
+        "addAfterBoil": "false",
+        "color": "610.0"
+      },
+      {
+        "name": "Seigle Grillée (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "69",
+        "addAfterBoil": "false",
+        "color": "250.0"
+      },
+      {
+        "name": "Froment Grillé (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "71",
+        "addAfterBoil": "false",
+        "color": "500.0"
+      },
+      {
+        "name": "Aromatique (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "78",
+        "addAfterBoil": "false",
+        "color": "25.0"
+      },
+      {
+        "name": "Special B",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "65",
+        "addAfterBoil": "false",
+        "color": "152.0"
+      },
+      {
+        "name": "Rauch (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "77",
+        "addAfterBoil": "false",
+        "color": "2.0"
+      },
+      {
+        "name": "Carapils",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "75",
+        "addAfterBoil": "false",
+        "color": "3.0"
+      },
+      {
+        "name": "Carabelge",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "74",
+        "addAfterBoil": "false",
+        "color": "16.0"
+      },
+      {
+        "name": "Cara Bohemian",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "73",
+        "addAfterBoil": "false",
+        "color": "102.0"
+      },
+      {
+        "name": "Carafa Special I",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "65",
+        "addAfterBoil": "false",
+        "color": "457.0"
+      },
+      {
+        "name": "Carafa Special II",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "65",
+        "addAfterBoil": "false",
+        "color": "609.0"
+      },
+      {
+        "name": "Carafa Special III",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "65",
+        "addAfterBoil": "false",
+        "color": "711.0"
+      },
+      {
+        "name": "Epautre (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "80",
+        "addAfterBoil": "false",
+        "color": "3.0"
+      },
+      {
+        "name": "Froment Torréfié",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "73",
+        "addAfterBoil": "false",
+        "color": "2.0"
+      },
+      {
+        "name": "Froment, fumé au chêne (Malt)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "81",
+        "addAfterBoil": "false",
+        "color": "3.0"
+      },
+      {
+        "name": "Avoine, flocons",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "80",
+        "addAfterBoil": "false",
+        "color": "1.0"
+      },
+      {
+        "name": "Orge, flocons",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "60",
+        "addAfterBoil": "false",
+        "color": "2.0"
+      },
+      {
+        "name": "Maïs, flocons",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "60",
+        "addAfterBoil": "false",
+        "color": "2.0"
+      },
+      {
+        "name": "Sucre Candi (Clear)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Sugar",
+        "yield": "78",
+        "addAfterBoil": "false",
+        "color": "75.0"
+      },
+      {
+        "name": "Sucre Candy (Dark)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Sugar",
+        "yield": "78",
+        "addAfterBoil": "false",
+        "color": "275.0"
+      },
+      {
+        "name": "Sucre Candi Sirop (Dark)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Sugar",
+        "yield": "73",
+        "addAfterBoil": "false",
+        "color": "127.0"
+      },
+      {
+        "name": "Sucre Candi Sirop (Extra Dark)",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Sugar",
+        "yield": "73",
+        "addAfterBoil": "false",
+        "color": "2538.0"
+      },
+      {
+        "name": "Extrait en poudre Amber",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Dry Extract",
+        "yield": "95",
+        "addAfterBoil": "false",
+        "color": "9.0"
+      },
+      {
+        "name": "Extrait en poudre Black",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Dry Extract",
+        "yield": "95",
+        "addAfterBoil": "false",
+        "color": "48.0"
+      },
+      {
+        "name": "Extrait en poudre Blond",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Dry Extract",
+        "yield": "95",
+        "addAfterBoil": "false",
+        "color": "4.0"
+      },
+      {
+        "name": "Extrait en poudre Foncé",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Dry Extract",
+        "yield": "95",
+        "addAfterBoil": "true",
+        "color": "29.0"
+      },
+      {
+        "name": "Extrait en poudre Froment",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Dry Extract",
+        "yield": "95",
+        "addAfterBoil": "false",
+        "color": "4.0"
+      },
+      {
+        "name": "Extrait liquide Blond",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Extract",
+        "yield": "80",
+        "addAfterBoil": "true",
+        "color": "5.0"
+      },
+      {
+        "name": "Extrait liquide Foncé",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Extract",
+        "yield": "80",
+        "addAfterBoil": "true",
+        "color": "28.0"
+      },
+      {
+        "name": "Extrait liquide Froment",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Extract",
+        "yield": "80",
+        "addAfterBoil": "true",
+        "color": "4.0"
+      },
+      {
+        "name": "Extrait liquide Amber",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Extract",
+        "yield": "80",
+        "addAfterBoil": "true",
+        "color": "9.0"
+      },
+      {
+        "name": "Miel",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Sugar",
+        "yield": "75",
+        "addAfterBoil": "false",
+        "color": "1.0"
+      },
+      {
+        "name": "Malt d'orge Fumé",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Grain",
+        "yield": "81",
+        "addAfterBoil": "false",
+        "color": "2.0"
+      },
+      {
+        "name": "Corn Sugar",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Sugar",
+        "yield": "100",
+        "addAfterBoil": "false",
+        "color": "0.0"
+      },
+      {
+        "name": "Glucose",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Sugar",
+        "yield": "100",
+        "addAfterBoil": "false",
+        "color": "0.0"
+      },
+      {
+        "name": "Glucose, sirop",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Sugar",
+        "yield": "78",
+        "addAfterBoil": "false",
+        "color": "0.0"
+      }
+    ],
+    "hop": [
+      {
+        "name": "Admiral",
+        "alpha": "15",
+        "form": "Leaf"
+      },
+      {
+        "name": "Ahtanum",
+        "alpha": "6",
+        "form": "Leaf"
+      },
+      {
+        "name": "Amarillo",
+        "alpha": "9",
+        "form": "Leaf"
+      },
+      {
+        "name": "Aquila",
+        "alpha": "7",
+        "form": "Leaf"
+      },
+      {
+        "name": "Banner",
+        "alpha": "10",
+        "form": "Leaf"
+      },
+      {
+        "name": "Bramling Cross",
+        "alpha": "6",
+        "form": "Leaf"
+      },
+      {
+        "name": "Brewer's Gold",
+        "alpha": "8",
+        "form": "Leaf"
+      },
+      {
+        "name": "Bullion",
+        "alpha": "8",
+        "form": "Leaf"
+      },
+      {
+        "name": "Cascade",
+        "alpha": "6",
+        "form": "Leaf"
+      },
+      {
+        "name": "Centennial",
+        "alpha": "10",
+        "form": "Leaf"
+      },
+      {
+        "name": "Challenger",
+        "alpha": "8",
+        "form": "Leaf"
+      },
+      {
+        "name": "Chinook",
+        "alpha": "13",
+        "form": "Leaf"
+      },
+      {
+        "name": "Cluster",
+        "alpha": "7",
+        "form": "Leaf"
+      },
+      {
+        "name": "Columbia",
+        "alpha": "6",
+        "form": "Leaf"
+      },
+      {
+        "name": "Columbus",
+        "alpha": "14",
+        "form": "Leaf"
+      },
+      {
+        "name": "Comet",
+        "alpha": "10",
+        "form": "Leaf"
+      },
+      {
+        "name": "Copy of Warrior",
+        "alpha": "15",
+        "form": "Leaf"
+      },
+      {
+        "name": "Crystal",
+        "alpha": "4",
+        "form": "Leaf"
+      },
+      {
+        "name": "Eroica",
+        "alpha": "13",
+        "form": "Leaf"
+      },
+      {
+        "name": "First Gold",
+        "alpha": "8",
+        "form": "Leaf"
+      },
+      {
+        "name": "Galena",
+        "alpha": "13",
+        "form": "Leaf"
+      },
+      {
+        "name": "Glacier",
+        "alpha": "6",
+        "form": "Leaf"
+      },
+      {
+        "name": "Hallertauer Hersbrucker",
+        "alpha": "4",
+        "form": "Leaf"
+      },
+      {
+        "name": "Hallertauer Mittelfrueh",
+        "alpha": "4",
+        "form": "Leaf"
+      },
+      {
+        "name": "Herald",
+        "alpha": "12",
+        "form": "Leaf"
+      },
+      {
+        "name": "Horizon",
+        "alpha": "12",
+        "form": "Leaf"
+      },
+      {
+        "name": "Liberty",
+        "alpha": "4",
+        "form": "Leaf"
+      },
+      {
+        "name": "Lublin",
+        "alpha": "5",
+        "form": "Leaf"
+      },
+      {
+        "name": "Magnum",
+        "alpha": "14",
+        "form": "Leaf"
+      },
+      {
+        "name": "Mt. Hood",
+        "alpha": "6",
+        "form": "Leaf"
+      },
+      {
+        "name": "Nelson Sauvin",
+        "alpha": "13",
+        "form": "Leaf"
+      },
+      {
+        "name": "Northdown",
+        "alpha": "9",
+        "form": "Leaf"
+      },
+      {
+        "name": "Nugget",
+        "alpha": "13",
+        "form": "Leaf"
+      },
+      {
+        "name": "Orion",
+        "alpha": "7",
+        "form": "Leaf"
+      },
+      {
+        "name": "Pacific Gem",
+        "alpha": "15",
+        "form": "Leaf"
+      },
+      {
+        "name": "Pearle ",
+        "alpha": "8",
+        "form": "Leaf"
+      },
+      {
+        "name": "Pilgrim",
+        "alpha": "12",
+        "form": "Leaf"
+      },
+      {
+        "name": "Pioneer",
+        "alpha": "9",
+        "form": "Leaf"
+      },
+      {
+        "name": "Pride of Ringwood",
+        "alpha": "9",
+        "form": "Leaf"
+      },
+      {
+        "name": "Progress",
+        "alpha": "6",
+        "form": "Leaf"
+      },
+      {
+        "name": "Saaz",
+        "alpha": "4",
+        "form": "Leaf"
+      },
+      {
+        "name": "Santiam",
+        "alpha": "6",
+        "form": "Leaf"
+      },
+      {
+        "name": "Select Spalt",
+        "alpha": "5",
+        "form": "Leaf"
+      },
+      {
+        "name": "Simcoe",
+        "alpha": "13",
+        "form": "Leaf"
+      },
+      {
+        "name": "Sorachi",
+        "alpha": "15",
+        "form": "Leaf"
+      },
+      {
+        "name": "Southern Cross",
+        "alpha": "13",
+        "form": "Leaf"
+      },
+      {
+        "name": "Spalter",
+        "alpha": "5",
+        "form": "Leaf"
+      },
+      {
+        "name": "Sterling",
+        "alpha": "8",
+        "form": "Leaf"
+      },
+      {
+        "name": "Sticklebract",
+        "alpha": "14",
+        "form": "Leaf"
+      },
+      {
+        "name": "Strisslespalt",
+        "alpha": "4",
+        "form": "Leaf"
+      },
+      {
+        "name": "Styrian Goldings",
+        "alpha": "5",
+        "form": "Leaf"
+      },
+      {
+        "name": "Sun",
+        "alpha": "14",
+        "form": "Leaf"
+      },
+      {
+        "name": "Super alpha",
+        "alpha": "13",
+        "form": "Leaf"
+      },
+      {
+        "name": "Target",
+        "alpha": "11",
+        "form": "Leaf"
+      },
+      {
+        "name": "Tettnang",
+        "alpha": "5",
+        "form": "Leaf"
+      },
+      {
+        "name": "Tradition",
+        "alpha": "6",
+        "form": "Leaf"
+      },
+      {
+        "name": "Ultra",
+        "alpha": "3",
+        "form": "Leaf"
+      },
+      {
+        "name": "Vanguard",
+        "alpha": "6",
+        "form": "Leaf"
+      },
+      {
+        "name": "Warrior",
+        "alpha": "15",
+        "form": "Leaf"
+      },
+      {
+        "name": "Williamette",
+        "alpha": "6",
+        "form": "Leaf"
+      },
+      {
+        "name": "Zeus",
+        "alpha": "14",
+        "form": "Pellet"
+      },
+      {
+        "name": "Apollo",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "17.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Aramis",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "8.5",
+        "use": "Boil"
+      },
+      {
+        "name": "Atlas",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "7.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Aurora",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Plug",
+        "time": "0.0",
+        "alpha": "7.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Endeavour",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "9.5",
+        "use": "Boil"
+      },
+      {
+        "name": "WGV",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "6.5",
+        "use": "Boil"
+      },
+      {
+        "name": "Beata",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "4.5",
+        "use": "Boil"
+      },
+      {
+        "name": "Boadicea",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "8.5",
+        "use": "Boil"
+      },
+      {
+        "name": "Fuggle",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "5.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Goldings",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "7.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Sovereign",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "5.5",
+        "use": "Boil"
+      },
+      {
+        "name": "Phoenix",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "10.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Pilot",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "9.5",
+        "use": "Boil"
+      },
+      {
+        "name": "Motueka",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "7.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Agnus",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "12.0",
+        "use": "Boil"
+      },
+      {
+        "name": "East Kent Goldings",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "5.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Flyer",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "11.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Sussex ",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "7.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Belma",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "12.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Bravo",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "17.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Calypso",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "17.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Citra",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "15.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Delta",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "6.5",
+        "use": "Boil"
+      },
+      {
+        "name": "El Dorado",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "16.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Multihead",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "4.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Newport",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "13.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Sonnet",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "4.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Summit",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "16.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Bobek",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "5.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Celeia",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "5.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Junga",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "12.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Mandarina Baveria",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "7.5",
+        "use": "Boil"
+      },
+      {
+        "name": "Northern Brewer",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "8.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Vital",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "10.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Galaxy",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "15.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Green Bullet",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "13.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Motueka",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "8.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Stella ",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "16.0",
+        "use": "Boil"
+      },
+      {
+        "name": "Summer",
+        "version": "1",
+        "amout": "0.0",
+        "form": "Leaf",
+        "time": "0.0",
+        "alpha": "6.5",
+        "use": "Boil"
+      }
+    ],
+    "misc": [
+      {
+        "name": "Badiane",
+        "type": "Spice"
+      },
+      {
+        "name": "Cannelle moulue",
+        "type": "Spice"
+      },
+      {
+        "name": "Copeaux de chêne",
+        "type": "Flavor"
+      },
+      {
+        "name": "Coriandre",
+        "type": "Spice"
+      },
+      {
+        "name": "Gélatine",
+        "type": "Fining"
+      },
+      {
+        "name": "Irish Moss",
+        "type": "Fining"
+      },
+      {
+        "name": "Nutriment levures",
+        "type": "Other"
+      },
+      {
+        "name": "Sel",
+        "type": "Water Agent"
+      },
+      {
+        "name": "Whirlfloc",
+        "type": "Fining"
+      },
+      {
+        "name": "Zeste d'orange",
+        "type": "Flavor"
+      },
+      {
+        "name": "Gypse",
+        "version": "1",
+        "amout": "0.0",
+        "type": "Water Agent",
+        "time": "0.0",
+        "use": "Boil"
+      }
+    ],
+    "yeast": [
+      {
+        "name": "American Ale",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1056",
+        "attenuation": "75"
+      },
+      {
+        "name": "American Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP060",
+        "attenuation": "77"
+      },
+      {
+        "name": "American Ale II",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1272",
+        "attenuation": "74"
+      },
+      {
+        "name": "American Lager",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "2035",
+        "attenuation": "75"
+      },
+      {
+        "name": "American Wheat",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1010",
+        "attenuation": "76"
+      },
+      {
+        "name": "Antwerp Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP515",
+        "attenuation": "77"
+      },
+      {
+        "name": "Bavarian Lager",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "2206",
+        "attenuation": "75"
+      },
+      {
+        "name": "Bavarian Wheat",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "3638",
+        "attenuation": "73"
+      },
+      {
+        "name": "Bavarian Wheat Blend",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "3056",
+        "attenuation": "75"
+      },
+      {
+        "name": "Belgian Abbey",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1214",
+        "attenuation": "76"
+      },
+      {
+        "name": "Belgian Abbey II",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1762",
+        "attenuation": "75"
+      },
+      {
+        "name": "Belgian Ardennes",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "3522",
+        "attenuation": "74"
+      },
+      {
+        "name": "Belgian Golden Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP570",
+        "attenuation": "76"
+      },
+      {
+        "name": "Belgian Lager",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP815",
+        "attenuation": "75"
+      },
+      {
+        "name": "Belgian Lambic Blend",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "3278",
+        "attenuation": "75"
+      },
+      {
+        "name": "Belgian Saison",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "3724",
+        "attenuation": "78"
+      },
+      {
+        "name": "Belgian Saison I",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP565",
+        "attenuation": "70"
+      },
+      {
+        "name": "Belgian Sour Mix I",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP655",
+        "attenuation": "75"
+      },
+      {
+        "name": "Belgian Strong Ale",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1388",
+        "attenuation": "76"
+      },
+      {
+        "name": "Belgian Wheat",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "3942",
+        "attenuation": "74"
+      },
+      {
+        "name": "Belgian Wit Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP400",
+        "attenuation": "76"
+      },
+      {
+        "name": "Belgian Witbier",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "3944",
+        "attenuation": "74"
+      },
+      {
+        "name": "Berlinerweisse Blend",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP630",
+        "attenuation": "77"
+      },
+      {
+        "name": "Bohemian Lager",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "2124",
+        "attenuation": "75"
+      },
+      {
+        "name": "Brettanomyces bruxellensis",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "5112",
+        "attenuation": "75"
+      },
+      {
+        "name": "Brettanomyces lambicus",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "5526",
+        "attenuation": "75"
+      },
+      {
+        "name": "British Ale",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1098",
+        "attenuation": "74"
+      },
+      {
+        "name": "British Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP005",
+        "attenuation": "72"
+      },
+      {
+        "name": "British Ale II",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1335",
+        "attenuation": "75"
+      },
+      {
+        "name": "Budvar Lager",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "2000",
+        "attenuation": "73"
+      },
+      {
+        "name": "Burton Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP023",
+        "attenuation": "72"
+      },
+      {
+        "name": "California Lager",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "2112",
+        "attenuation": "69"
+      },
+      {
+        "name": "Californian Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP001",
+        "attenuation": "77"
+      },
+      {
+        "name": "Californian V Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP051",
+        "attenuation": "73"
+      },
+      {
+        "name": "Czech Budejovice Lager",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP802",
+        "attenuation": "77"
+      },
+      {
+        "name": "Czech Pils",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "2278",
+        "attenuation": "72"
+      },
+      {
+        "name": "Danish Lager",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "2042",
+        "attenuation": "75"
+      },
+      {
+        "name": "Denny's Favorite 50",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1450",
+        "attenuation": "75"
+      },
+      {
+        "name": "Dry English Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP007",
+        "attenuation": "75"
+      },
+      {
+        "name": "Edinburgh Scottish Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP028",
+        "attenuation": "73"
+      },
+      {
+        "name": "English Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP002",
+        "attenuation": "77"
+      },
+      {
+        "name": "Essex Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP022",
+        "attenuation": "69"
+      },
+      {
+        "name": "European Ale",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1338",
+        "attenuation": "69"
+      },
+      {
+        "name": "Forbidden Fruit",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "3463",
+        "attenuation": "74"
+      },
+      {
+        "name": "French Saison",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "3711",
+        "attenuation": "80"
+      },
+      {
+        "name": "German Ale",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1007",
+        "attenuation": "75"
+      },
+      {
+        "name": "German Bock Lager",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP833",
+        "attenuation": "73"
+      },
+      {
+        "name": "German Kolsch Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP029",
+        "attenuation": "75"
+      },
+      {
+        "name": "German Lager",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP830",
+        "attenuation": "77"
+      },
+      {
+        "name": "German Wheat",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "3333",
+        "attenuation": "73"
+      },
+      {
+        "name": "Hefeweizen",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP300",
+        "attenuation": "74"
+      },
+      {
+        "name": "Hefeweizen IV",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP380",
+        "attenuation": "77"
+      },
+      {
+        "name": "Irish Ale",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1084",
+        "attenuation": "73"
+      },
+      {
+        "name": "Irish Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP004",
+        "attenuation": "72"
+      },
+      {
+        "name": "Kolsch",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "2565",
+        "attenuation": "75"
+      },
+      {
+        "name": "Lactobacillus",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "5335",
+        "attenuation": "75"
+      },
+      {
+        "name": "London Ale",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1028",
+        "attenuation": "75"
+      },
+      {
+        "name": "London Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP013",
+        "attenuation": "71"
+      },
+      {
+        "name": "London Ale III",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "1318",
+        "attenuation": "73"
+      },
+      {
+        "name": "London ESB Ale",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1968",
+        "attenuation": "69"
+      },
+      {
+        "name": "Munich Lager",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "2308",
+        "attenuation": "72"
+      },
+      {
+        "name": "Northwest Ale",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1332",
+        "attenuation": "69"
+      },
+      {
+        "name": "Octoberfest Lager Blend",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "2633",
+        "attenuation": "75"
+      },
+      {
+        "name": "Pediococcus",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "5733",
+        "attenuation": "75"
+      },
+      {
+        "name": "Pilsen Lager",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "2007",
+        "attenuation": "73"
+      },
+      {
+        "name": "Pilsner Lager",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP800",
+        "attenuation": "75"
+      },
+      {
+        "name": "Ringwood Ale",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1187",
+        "attenuation": "70"
+      },
+      {
+        "name": "Roeselare Ale Blend",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "3763",
+        "attenuation": "80"
+      },
+      {
+        "name": "Safale",
+        "form": "Dry",
+        "laboratory": "Fermentis",
+        "productId": "K-97",
+        "attenuation": "73"
+      },
+      {
+        "name": "Safale",
+        "form": "Dry",
+        "laboratory": "Fermentis",
+        "productId": "S-04",
+        "attenuation": "73"
+      },
+      {
+        "name": "Safale",
+        "form": "Dry",
+        "laboratory": "Fermentis",
+        "productId": "US-05",
+        "attenuation": "73"
+      },
+      {
+        "name": "Safbrew",
+        "form": "Dry",
+        "laboratory": "Fermentis",
+        "productId": "S-33",
+        "attenuation": "73"
+      },
+      {
+        "name": "Safbrew",
+        "form": "Dry",
+        "laboratory": "Fermentis",
+        "productId": "T-58",
+        "attenuation": "73"
+      },
+      {
+        "name": "Safbrew",
+        "form": "Dry",
+        "laboratory": "Fermentis",
+        "productId": "WB-06",
+        "attenuation": "73"
+      },
+      {
+        "name": "Saflager",
+        "form": "Dry",
+        "laboratory": "Fermentis",
+        "productId": "S-189",
+        "attenuation": "73"
+      },
+      {
+        "name": "Saflager",
+        "form": "Dry",
+        "laboratory": "Fermentis",
+        "productId": "W34/70",
+        "attenuation": "73"
+      },
+      {
+        "name": "Saflager",
+        "form": "Dry",
+        "laboratory": "Fermentis",
+        "productId": "S-23",
+        "attenuation": "74"
+      },
+      {
+        "name": "Scottish Ale",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1728",
+        "attenuation": "71"
+      },
+      {
+        "name": "Thames Valley Ale",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1275",
+        "attenuation": "77"
+      },
+      {
+        "name": "Trappist Ale",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP500",
+        "attenuation": "77"
+      },
+      {
+        "name": "Trappist High Gravity",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "3787",
+        "attenuation": "76"
+      },
+      {
+        "name": "Urquell Lager",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "2001",
+        "attenuation": "74"
+      },
+      {
+        "name": "Weihenstephan Weizen",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "3068",
+        "attenuation": "75"
+      },
+      {
+        "name": "Whitbread Ale",
+        "form": "Liquid",
+        "laboratory": "Wyeast",
+        "productId": "1099",
+        "attenuation": "70"
+      },
+      {
+        "name": "Abbey Ale",
+        "version": "1",
+        "form": "Liquid",
+        "laboratory": "White Labs",
+        "productId": "WLP530",
+        "attenuation": "78"
+      }
+    ],
+    "water": [
+        {
+            "name": "Tap water"
+        },
+        {
+            "name": "Source water"
+        },
+        {
+            "name": "Mineral water"
+        }
+    ]
+}

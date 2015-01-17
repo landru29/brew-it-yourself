@@ -1,0 +1,295 @@
+ul.step-list {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ul.step-list div.title a {
+    font-size: 18px;
+    width: 350px;
+    display: inline-block;
+}
+
+ul.step-list div.ingredients div {
+    padding: 0px 0px 0px 20px;
+}
+
+ul.step-list div.ingredients div li.dummy {
+    width: 200px;
+    cursor:pointer;
+    
+    border: 1px #aaaaaa dashed;
+    background-color: #efefef;
+    margin: 1px;
+
+    padding: 5px;
+
+    color: #aaaaaa;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    text-decoration: inherit;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+ul.step-list div.ingredients div li.dummy:hover {
+    border: 2px #728ae9 dashed;
+    margin: 0px;
+    text-align: center;
+    color: #728ae9;
+    font-weight: bold;
+}
+
+ul.step-list label {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+}
+
+div.step-list {
+    display:inline-block;
+}
+
+div.recipe-header ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+div.recipe-header {
+    display:inline-block;
+    width: 300px;
+    vertical-align: top;
+    margin: 10px;
+    
+    border: 1px #3bac3f solid;
+
+    background-color: #f4fcf2;
+
+    padding: 18px;
+
+    color: #005711;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    text-decoration: inherit;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+
+    -moz-box-shadow: 3px -3px 10px 0px #959ba3;
+    -webkit-box-shadow: 3px -3px 10px 0px #959ba3;
+    box-shadow: 3px -3px 10px 0px #959ba3;
+}
+
+div.step {
+    width: 400px;
+    margin:10px;
+
+    border: 1px #728ae9 solid;
+
+    background-color: #f5faff;
+
+    padding: 18px;
+
+    color: #002157;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    text-decoration: inherit;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+
+    -moz-box-shadow: 3px -3px 10px 0px #959ba3;
+    -webkit-box-shadow: 3px -3px 10px 0px #959ba3;
+    box-shadow: 3px -3px 10px 0px #959ba3;
+}
+
+div.dummy-step {
+    width: 400px;
+    height: 127px;
+    margin:10px;
+    cursor:pointer;
+    
+    border: 2px #aaaaaa dashed;
+    background-color: #efefef;
+
+    padding: 18px;
+
+    color: #aaaaaa;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    text-decoration: inherit;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+
+    -moz-box-shadow: 0px 0px 10px 0px #333333;
+    -webkit-box-shadow: 0px 0px 10px 0px #333333;
+    box-shadow: 0px 0px 10px 0px #333333;
+}
+
+div.dummy-step:hover {
+    border: 4px #728ae9 dashed;
+    margin:8px;
+    text-align: center;
+    padding-top: 45px;
+    font-size: 18px;
+    color: #728ae9;
+    font-weight: bold;
+}
+
+span.close-button,span.suppr-button {
+    display:inline-block;
+    background: url('img/icon-close.png') no-repeat;
+    width:24px;
+    height:24px;
+    cursor:pointer;
+    
+}
+
+span.ingredient {
+    width: 270px;
+    display: inline-block;
+}
+
+span.close-button:hover,span.suppr-button:hover {
+    background-position: 100%;
+}
+
+div.step span.close-button {
+    position: relative;
+    top: -40px;
+    right: -352px;
+}
+
+span.save-button {
+    display:inline-block;
+    background: url('img/icon-save.png') no-repeat;
+    width:24px;
+    height:24px;
+    cursor:pointer;
+    
+}
+
+span.save-button:hover {
+    background-position: 100%;
+}
+
+div.recipe-header span.save-button {
+    position: relative;
+    top: -15px;
+    right: -254px;
+}
+
+span.open-file-button {
+    display:inline-block;
+    background: url('img/icon-open-file.png') no-repeat;
+    width:24px;
+    height:24px;
+    cursor:pointer;
+    
+}
+
+span.open-file-button:hover {
+    background-position: 100%;
+}
+
+div.recipe-header span.open-file-button {
+    position: relative;
+    top: -15px;
+    right: -200px;
+}   
+
+span.new-button {
+    display:inline-block;
+    background: url('img/icon-new.png') no-repeat;
+    width:24px;
+    height:24px;
+    cursor:pointer;
+    
+}
+
+span.new-button:hover {
+    background-position: 100%;
+}
+
+div.recipe-header span.new-button {
+    position: relative;
+    top: -15px;
+    right: -146px;
+}
+
+span.clone-button {
+    display:inline-block;
+    background: url('img/icon-clone.png') no-repeat;
+    width:24px;
+    height:24px;
+    cursor:pointer;
+    
+}
+
+span.clone-button:hover {
+    background-position: 100%;
+}
+
+div.recipe-header span.clone-button {
+    position: relative;
+    top: -15px;
+    right: -92px;
+}
+
+span.delete-button {
+    display:inline-block;
+    background: url('img/icon-delete.png') no-repeat;
+    width:24px;
+    height:24px;
+    cursor:pointer;
+    
+}
+
+span.delete-button:hover {
+    background-position: 100%;
+}
+
+div.recipe-header span.delete-button {
+    position: relative;
+    top: -15px;
+    right: -38px;
+}
+
+li.file-to-open {
+    cursor:pointer;
+}
+
+ul.file-list li {
+    background: url('img/icon-file.png') no-repeat left top;
+    padding: 3px 0px 3px 10px;
+    padding-left: 40px;
+    list-style: none;
+    margin: 0;
+    color: #888888;
+}
+
+ul.file-list li:hover {
+    color: blue;
+}
+
+div.ingredient-database {
+    height: 300px;
+    overflow: auto;
+}

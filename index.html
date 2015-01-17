@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Brew it yourself!</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css">
+        <link rel="stylesheet" href="bower_components/ng-sortable/dist/ng-sortable.min.css">
+        <link rel="stylesheet" href="styles/tree.css">
+    </head>
+    <body>
+    <div ng-app="BrewItYourself">
+        <div ng-view="">
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"> </script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"> </script>
+    <script type="text/javascript" src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script type="text/javascript" src="bower_components/ng-sortable/dist/ng-sortable.min.js"></script>
+    <script type="text/javascript" src="bower_components/ngstorage/ngStorage.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"> </script>
+    <script type="text/javascript" src="scripts/app.js"> </script>
+    <script type="text/javascript" src="scripts/controllers/editorCtrl.js"> </script>
+    <script type="text/javascript" src="scripts/controllers/modalRecipeOpenCtrl.js"> </script>
+    <script type="text/javascript" src="scripts/controllers/modalIngredientPickCtrl.js"> </script>
+    <script type="text/javascript" src="scripts/services/messageService.js"> </script>
+    <script type="text/javascript" src="scripts/services/storageService.js"> </script>
+    <script type="text/javascript" src="scripts/services/ingredientProvider.js"> </script>
+    <script type="text/javascript" src="scripts/services/utilFactory.js"> </script>
+    <script type="text/javascript" src="scripts/services/recipeProvider.js"> </script>
+    <script type="text/javascript" src="scripts/directives/treeView.js"> </script>
+    </body>
+</html>

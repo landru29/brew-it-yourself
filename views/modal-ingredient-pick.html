@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h3 class="modal-title">Select an ingredient</h3>
+</div>
+<div class="modal-body">
+    <div class="ingredient-database">
+        <div
+          angular-treeview="true"
+          tree-model="treeData"
+          tree-id="ingredient"
+          node-id="name"
+          node-label="name"
+          node-children="children" >
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
