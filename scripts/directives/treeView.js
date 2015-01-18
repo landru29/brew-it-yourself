@@ -1,5 +1,5 @@
 /*global angular */
-angular.module('BrewItYourself').directive('treeModel', function ($compile) {
+angular.module('BrewItYourself').directive('treeModel', ['$compile', function ($compile) {
     'use strict';
     return {
         restrict: 'A',
@@ -74,4 +74,4 @@ angular.module('BrewItYourself').directive('treeModel', function ($compile) {
             }
         }
     };
-});
+}]);
