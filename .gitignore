@@ -3,6 +3,8 @@ bower_components/
 *.log
 .sass-cache/
 
+.deploy
+
 dist.tgz
 
 build/

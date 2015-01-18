@@ -11,16 +11,39 @@ Installation
 -------------
 
 You need, first, to install NodeJs, grunt and bower on your machine:
->- http://nodejs.org/
->- npm install -g grunt-cli
->- npm install -g bower
+http://nodejs.org/
+```shell
+npm install -g grunt-cli
+npm install -g bower
+```
 
  Then, from the main folder :
->- npm install
->- bower install
-
+```shell
+npm install
+bower install
+```
 
 Launch the application in development mode
 ------------------------------------------
 
->- grunt serve
+```shell
+grunt serve
+```
+
+
+Build the application
+---------------------
+
+```shell
+grunt
+```
+
+This will create `dist.tgz`
+
+
+Check the built application
+---------------------------
+
+```shell
+grunt prod_check
+```

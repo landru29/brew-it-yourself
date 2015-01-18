@@ -287,4 +287,6 @@ module.exports = function (grunt) {
         'usemin',
         'compress'
     ]);
+    
+    grunt.registerTask('default',['prod']);
 };
