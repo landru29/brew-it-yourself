@@ -1,6 +1,6 @@
 div.main-title {
     text-align: center;
-    font-size: 78px;
+    font-size: 60px;
     font-weight: bold;
     background: url('img/chope.png') no-repeat;
 }
@@ -33,7 +33,7 @@ div.main-menu ul li:hover,div.main-menu ul li.active {
     background-color: #dddddd;
 }
 
-body {
+div.app-frame {
     text-align:center;
     width:100%;
 }
@@ -42,4 +42,5 @@ div.main-frame {
     width:1000px;
     text-align: left;
     display:inline-block;
+    margin: 20px 0px 0px 0px;
 }

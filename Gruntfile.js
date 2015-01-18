@@ -13,7 +13,8 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         project: {
             build: './build',
-            dist: './dist'
+            dist: './dist',
+            app: './app'
         },
 
         /*************************************************/
@@ -22,7 +23,7 @@ module.exports = function (grunt) {
         express: { // create a server to localhost
             dev: {
                 options: {
-                    bases: [__dirname],
+                    bases: ['<%= project.app%>', __dirname],
                     port: 9000,
                     hostname: "0.0.0.0",
                     livereload: true
@@ -30,7 +31,7 @@ module.exports = function (grunt) {
             },
             prod_check: {
                 options: {
-                    bases: [__dirname + '/dist'],
+                    bases: [__dirname + '/<%= project.dist%>'],
                     port: 3000,
                     hostname: "0.0.0.0",
                     livereload: true
@@ -51,7 +52,7 @@ module.exports = function (grunt) {
 
         watch: { // watch files, trigger actions and perform livereload
             dev: {
-                files: ['index.html', 'scripts/**', 'styles/**', 'views/**'],
+                files: ['<%= project.app%>/index.html', '<%= project.app%>/scripts/**', '<%= project.app%>/styles/**', '<%= project.app%>/views/**'],
                 tasks: ['jshint', 'sass:dist', 'copy:dev'],
                 options: {
                     livereload: true
@@ -67,8 +68,7 @@ module.exports = function (grunt) {
 
         jshint: {
             dev: [
-                '../lib/**/*.js',
-                './scripts/**/*.js',
+                '<%= project.app%>/scripts/**/*.js',
                 'Gruntfile.js'
             ]
         },
@@ -79,7 +79,7 @@ module.exports = function (grunt) {
 
         useminPrepare: {
             html: {
-                src: ['./index.html']
+                src: ['<%= project.app%>/index.html']
             },
             options: {
                 dest: '<%= project.dist%>',
@@ -113,22 +113,20 @@ module.exports = function (grunt) {
             dist: {
                 // the files to concatenate
                 src: [
-                    'scripts/*.js',
-                    'scripts/controllers/*.js',
-                    'scripts/directives/*.js',
-                    'scripts/services/*.js'
+                    '<%= project.app%>/scripts/*.js',
+                    '<%= project.app%>/scripts/controllers/*.js',
+                    '<%= project.app%>/scripts/directives/*.js',
+                    '<%= project.app%>/scripts/services/*.js'
                 ],
                 // the location of the resulting JS file
-                dest: 'build/<%= pkg.name %>.js'
+                dest: '<%= project.build%>/<%= pkg.name %>.js'
             }
         },
 
         wiredep: { // Inject bower components in index.html
             app: {
-                src: ['./index.html'],
-                //exclude: [/jquery/]
-                /*,
-                ignorePath: /\.\.\//*/
+                src: ['<%= project.app%>/index.html'],
+                ignorePath: /\.\.\//
             }
         },
 
@@ -137,7 +135,7 @@ module.exports = function (grunt) {
                 files: [
                     {
                         dest: '<%= project.dist%>/styles/styles.min.css',
-                        src: ['styles/*.css', '<%= project.build%>/styles/*.css']
+                        src: ['<%= project.app%>/styles/*.css', '<%= project.build%>/styles/*.css']
                     }
                 ]
             }
@@ -165,7 +163,7 @@ module.exports = function (grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    'build/styles/main.css': 'styles/main.scss',
+                    '<%= project.build%>/styles/main.css': '<%= project.app%>/styles/main.scss',
                 }
             }
         },
@@ -189,13 +187,15 @@ module.exports = function (grunt) {
                     { // Images for the styles
                         expand: true,
                         flatten: true,
-                        src: ['styles/img/**'],
+                        src: ['<%= project.app%>/styles/img/**'],
                         dest: '<%= project.dist%>/styles/img'
                     },
                     { // html files in views foldder
                         expand: true,
-                        src: ['views/**'],
-                        dest: '<%= project.dist%>/'
+                        flatten: true,
+                        src: ['<%= project.app%>/views/**'],
+                        filter: 'isFile',
+                        dest: '<%= project.dist%>/views/'
                     },
                     { // glyphicon from bootstrap
                         expand: true,
@@ -207,8 +207,15 @@ module.exports = function (grunt) {
                     { // JSON fils in data folder
                         expand: true,
                         flatten: true,
-                        src: ['data/*.json'],
+                        src: ['<%= project.app%>/data/*.json'],
                         dest: '<%= project.dist%>/data',
+                        filter: 'isFile'
+                    },
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ['<%= project.app%>/favicon.ico'],
+                        dest: '<%= project.dist%>/',
                         filter: 'isFile'
                     }
 
@@ -218,7 +225,8 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        src: ['index.html'],
+                        flatten: true,
+                        src: ['<%= project.app%>/index.html'],
                         dest: '<%= project.dist%>/',
                         filter: 'isFile'
                     }
@@ -229,7 +237,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         flatten: true,
-                        src: ['styles/img/**'],
+                        src: ['<%= project.app%>/styles/img/**'],
                         dest: '<%= project.build%>/styles/img'
                     },
                 ]
@@ -242,7 +250,7 @@ module.exports = function (grunt) {
                 },
                 files: [
                     {
-                        src:['dist/**'],
+                        src:['<%= project.dist%>//**'],
                         expand:true,
                         dest: '.'
                     }

@@ -21,18 +21,20 @@
         
     </head>
     <body>
-    <div class="main-frame" ng-app="BrewItYourself">
-        <div class="main-title">Brew it yourself</div>
-        <div class="main-menu">
-            <ul>
-                <li>item1</li>
-                <li>item2</li>
-                <li>item3</li>
-            </ul>
+        <div class="app-frame">
+            <div class="main-frame" ng-app="BrewItYourself">
+                <div class="main-title">Brew it yourself</div>
+                <div class="main-menu">
+                    <ul>
+                        <li>item1</li>
+                        <li>item2</li>
+                        <li>item3</li>
+                    </ul>
+                </div>
+                <div class="view-container" ng-view="">
+                </div>
+            </div>
         </div>
-        <div class="view-container" ng-view="">
-        </div>
-    </div>
 
 
     <!-- build:js(.) scripts/vendor.js -->
