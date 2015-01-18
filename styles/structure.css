@@ -1,0 +1,45 @@
+div.main-title {
+    text-align: center;
+    font-size: 78px;
+    font-weight: bold;
+    background: url('img/chope.png') no-repeat;
+}
+
+div.main-menu {
+    border-bottom: solid 1px #aaaaaa;
+    margin:5px 0px 25px 5px;
+    padding:0px 0px 5px 0px;
+}
+
+div.main-menu ul {
+    list-style-type: none;
+    cursor:pointer;
+    padding:0px;
+    margin:0px;
+    text-align:right;
+    font-size: 16px;
+}
+
+div.main-menu ul li {
+    display: inline-block;
+    margin: 0px 1px 0px 1px;
+    padding: 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+div.main-menu ul li:hover,div.main-menu ul li.active {
+    background-color: #dddddd;
+}
+
+body {
+    text-align:center;
+    width:100%;
+}
+
+div.main-frame {
+    width:1000px;
+    text-align: left;
+    display:inline-block;
+}
