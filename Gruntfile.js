@@ -52,7 +52,7 @@ module.exports = function (grunt) {
 
         watch: { // watch files, trigger actions and perform livereload
             dev: {
-                files: ['<%= project.app%>/index.html', '<%= project.app%>/scripts/**', '<%= project.app%>/styles/**', '<%= project.app%>/views/**'],
+                files: ['<%= project.app%>/index.html', '<%= project.app%>/scripts/**/*.js', '<%= project.app%>/styles/**/*', '<%= project.app%>/views/**'],
                 tasks: ['jshint', 'sass:dist', 'copy:dev'],
                 options: {
                     livereload: true

@@ -39,8 +39,10 @@
                         <div class="ingredients">
                             <label>Ingredients:</label>
                             <div>
-                                <ul>
-                                    <li ng-repeat="ingredient in step.ingredients" class="ingredient-{{ingredient.type}}"><span class="ingredient">{{ingredient.name}}</span><span class="suppr-button" ng-click="deleteIngredient(step, $index)"></span></li>
+                                <ul class="ingredient-item-list">
+                                    <li ng-repeat="ingredient in step.ingredients" ingredient-item="ingredient">
+                                        <!--<span class="ingredient">{{ingredient.name}}</span><span class="suppr-button" ng-click="deleteIngredient(step, $index)"></span>-->
+                                    </li>
                                     <li class="dummy" ng-click="insertIngredient(step)">New ingredient</li>
                                 </ul>
                             </div>

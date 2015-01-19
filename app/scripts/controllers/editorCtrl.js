@@ -19,6 +19,25 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$localStor
         util.deleteFromArray(step.ingredients, index);
     };
     
+    $scope.recipe = new recipe.Recipe();
+    
+    $scope.pushStep = function () {
+        $scope.recipe.steps.push(new recipe.Step());
+    };
+    
+    $scope.deleteStep = function (index) {
+        util.deleteFromArray($scope.recipe.steps, index);
+    };
+    
+    $scope.stepSortOptions = {
+        containment: '#sortable-container'
+    };
+    
+    
+    /*************************************************/
+    /** MENU ACTIONS                                **/
+    /*************************************************/
+    
     $scope.save = function () {
         storageService.save($scope.recipe);
         messageService.inform('Information', 'Your recipe is saved');
@@ -64,18 +83,30 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$localStor
         $scope.recipe = new recipe.Recipe(data);
     };
     
-    $scope.recipe = new recipe.Recipe();
+    /*************************************************/
+    /** MENU TRIGGER RECIEVER                       **/
+    /*************************************************/
     
-    $scope.pushStep = function () {
-        $scope.recipe.steps.push(new recipe.Step());
-    };
+    $scope.$on('menu-trigger', function(event, args) {
+        console.log(args);
+        switch (args.action) {
+            case 'trash': 
+                $scope.deleteRecipe();
+                break;
+            case 'clone': 
+                $scope.cloneRecipe();
+                break;
+            case 'new': 
+                $scope.newRecipe();
+                break;
+            case 'open': 
+                $scope.open();
+                break;
+            case 'save': 
+                $scope.save();
+                break;
+        }
+    });
     
-    $scope.deleteStep = function (index) {
-        util.deleteFromArray($scope.recipe.steps, index);
-    };
-    
-    $scope.stepSortOptions = {
-        containment: '#sortable-container'
-    };
 }]);
 

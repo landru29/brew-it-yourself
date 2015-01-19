@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="styles/structure.css">
         <link rel="stylesheet" href="styles/tree.css">
+        <link rel="stylesheet" href="styles/ingredient-item.css">
         <!-- endbuild -->
         
         
@@ -24,11 +25,13 @@
         <div class="app-frame">
             <div class="main-frame" ng-app="BrewItYourself">
                 <div class="main-title">Brew it yourself</div>
-                <div class="main-menu">
+                <div class="main-menu" ng-controller="MenuCtrl">
                     <ul>
-                        <li>item1</li>
-                        <li>item2</li>
-                        <li>item3</li>
+                        <li class="trash-icon" ng-click="triggerAction('trash')">Trash</li>
+                        <li class="clone-icon" ng-click="triggerAction('clone')">Clone</li>
+                        <li class="new-icon" ng-click="triggerAction('new')">New</li>
+                        <li class="open-icon" ng-click="triggerAction('open')">Open</li>
+                        <li class="save-icon" ng-click="triggerAction('save')">Save</li>
                     </ul>
                 </div>
                 <div class="view-container" ng-view="">
@@ -53,6 +56,7 @@
     <!-- build:js scripts/Brew-it-yourself.min.js -->    
     <script type="text/javascript" src="scripts/app.js"> </script>
     <script type="text/javascript" src="scripts/controllers/editorCtrl.js"> </script>
+    <script type="text/javascript" src="scripts/controllers/menuCtrl.js"> </script>
     <script type="text/javascript" src="scripts/controllers/modalRecipeOpenCtrl.js"> </script>
     <script type="text/javascript" src="scripts/controllers/modalIngredientPickCtrl.js"> </script>
     <script type="text/javascript" src="scripts/services/messageService.js"> </script>
@@ -61,6 +65,7 @@
     <script type="text/javascript" src="scripts/services/utilFactory.js"> </script>
     <script type="text/javascript" src="scripts/services/recipeProvider.js"> </script>
     <script type="text/javascript" src="scripts/directives/treeView.js"> </script>
+    <script type="text/javascript" src="scripts/directives/ingredientItem.js"> </script>
     <!-- endbuild -->
     </body>
 </html>

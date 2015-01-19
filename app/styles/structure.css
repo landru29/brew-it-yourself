@@ -29,6 +29,32 @@ div.main-menu ul li {
     border-radius: 4px;
 }
 
+
+div.main-menu ul li.trash-icon {
+    background: url('img/icon-delete.png') no-repeat -24px 5px;
+    padding-left: 26px;
+}
+
+div.main-menu ul li.clone-icon {
+    background: url('img/icon-clone.png') no-repeat -24px 5px;
+    padding-left: 26px;
+}
+
+div.main-menu ul li.open-icon {
+    background: url('img/icon-open-file.png') no-repeat -24px 5px;
+    padding-left: 26px;
+}
+
+div.main-menu ul li.save-icon {
+    background: url('img/icon-save.png') no-repeat -24px 5px;
+    padding-left: 26px;
+}
+
+div.main-menu ul li.new-icon {
+    background: url('img/icon-new.png') no-repeat -24px 5px;
+    padding-left: 26px;
+}
+
 div.main-menu ul li:hover,div.main-menu ul li.active {
     background-color: #dddddd;
 }

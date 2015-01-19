@@ -1,0 +1,44 @@
+i.fermentable-icon {
+    background: url("img/icon-malt.png") no-repeat;
+    width: 20px;
+    height: 16px;
+    display: inline-block;
+}
+
+i.yeast-icon {
+    background: url("img/icon-yeast.png") no-repeat;
+    width: 20px;
+    height: 16px;
+    display: inline-block;
+}
+
+i.hop-icon {
+    background: url("img/icon-hops.png") no-repeat;
+    width: 20px;
+    height: 16px;
+    display: inline-block;
+}
+
+i.misc-icon {
+    background: url("img/icon-misc.png") no-repeat;
+    width: 20px;
+    height: 16px;
+    display: inline-block;
+}
+
+i.water-icon {
+    background: url("img/icon-water.png") no-repeat;
+    width: 20px;
+    height: 16px;
+    display: inline-block;
+}
+
+span.caption {
+    padding: 0px 0px 0px 10px;
+}
+
+ul.ingredient-item-list {
+    list-style-type: none;
+    padding:0px;
+    margin:0px;
+}

@@ -4,10 +4,10 @@
 	var shouldBe = function(expected, value, message) {
 		var arrondi = function(data) {
 			return Math.round(data * 1000) / 1000;
-		}
+		};
 		message += ': ' + arrondi(value) + ' should be ' + arrondi(expected);
 		console.log((arrondi(value) === arrondi(expected) ? '[OK] ' : '[ERROR] ') + message);
-	}
+	};
 
 
 	shouldBe(283.15, beerLib.conversion.temperature.fromCelcius(10).toKelvin(), 'Celcius to Kelvin');
