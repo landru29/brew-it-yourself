@@ -23,7 +23,7 @@ module.exports = function (grunt) {
         express: { // create a server to localhost
             dev: {
                 options: {
-                    bases: ['<%= project.app%>', __dirname],
+                    bases: ['<%= project.build%>', '<%= project.app%>', __dirname],
                     port: 9000,
                     hostname: "0.0.0.0",
                     livereload: true
@@ -53,7 +53,11 @@ module.exports = function (grunt) {
         watch: { // watch files, trigger actions and perform livereload
             dev: {
                 files: ['<%= project.app%>/index.html', '<%= project.app%>/scripts/**/*.js', '<%= project.app%>/styles/**/*', '<%= project.app%>/views/**'],
-                tasks: ['jshint', 'sass:dist', 'copy:dev'],
+                tasks: [
+                    'jshint',
+                    'sass:dist',
+                    'copy:dev'
+                ],
                 options: {
                     livereload: true
                 }
@@ -154,17 +158,28 @@ module.exports = function (grunt) {
         },
 
         clean: { // erase all files in dist and build folder
-            dist: ["dist", "build"]
+            dist: ['<%= project.dist%>', '<%= project.build%>'],
+            dev: ['<%= project.build%>']
         },
 
         sass: { // compile SCSS files into css files
+            options: {   // i've also tested including the compass option here, but results in the same error. 
+                /*includePaths: [
+                    'bower_components'
+                ]*/
+                compass: true
+            },
             dist: {
                 options: {
                     style: 'expanded'
                 },
-                files: {
-                    '<%= project.build%>/styles/main.css': '<%= project.app%>/styles/main.scss',
-                }
+                files: [{
+                    expand: true,
+                    cwd: '<%= project.app%>/styles/',
+                    src: ['*.scss'],
+                    dest: '<%= project.build%>/styles',
+                    ext: '.css'
+                }]
             }
         },
 
@@ -250,8 +265,8 @@ module.exports = function (grunt) {
                 },
                 files: [
                     {
-                        src:['<%= project.dist%>//**'],
-                        expand:true,
+                        src: ['<%= project.dist%>//**'],
+                        expand: true,
                         dest: '.'
                     }
                 ]
@@ -260,9 +275,12 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('serve', [
+        'clean:dev',
         'wiredep',
         'express:dev',
         'open:dev',
+        'sass:dist',
+        'copy:dev',
         'watch:dev'
     ]);
 
@@ -295,6 +313,6 @@ module.exports = function (grunt) {
         'usemin',
         'compress'
     ]);
-    
-    grunt.registerTask('default',['prod']);
+
+    grunt.registerTask('default', ['prod']);
 };

@@ -5,7 +5,8 @@ angular.module('BrewItYourself', [
     'xeditable',
     'ui.sortable',
     'ngStorage',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngAnimate'
 ]);
 
 angular.module('BrewItYourself').config(['$routeProvider', function ($routeProvider) {

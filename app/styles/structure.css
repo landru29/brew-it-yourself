@@ -59,6 +59,11 @@ div.main-menu ul li.new-icon {
     padding-left: 26px;
 }
 
+div.main-menu ul li.export-icon,.modal-dialog h3.export-icon  {
+    background: url('img/icon-export.png') no-repeat -24px 5px;
+    padding-left: 26px;
+}
+
 div.main-menu ul li:hover,div.main-menu ul li.active {
     background-color: #dddddd;
 }

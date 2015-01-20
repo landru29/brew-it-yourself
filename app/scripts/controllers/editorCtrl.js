@@ -1,5 +1,5 @@
 /*global angular */
-angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$localStorage', '$modal', 'messageService', 'storageService', 'util', 'recipe', function ($scope, $localStorage, $modal, messageService, storageService, util, recipe) {
+angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope', '$localStorage', '$modal', 'messageService', 'storageService', 'util', 'recipe', function ($scope, $rootScope, $localStorage, $modal, messageService, storageService, util, recipe) {
     "use strict";
     
     $scope.insertIngredient = function (step) {
@@ -26,7 +26,7 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$localStor
     };
     
     $scope.deleteStep = function (index) {
-        util.deleteFromArray($scope.recipe.steps, index);
+        $scope.recipe.steps.splice(index, 1);
     };
     
     $scope.stepSortOptions = {
@@ -40,7 +40,7 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$localStor
     
     $scope.save = function () {
         storageService.save($scope.recipe);
-        messageService.inform('Information', 'Your recipe is saved');
+        $rootScope.$broadcast('display-message', {type:'success', message:'Your recipe is saved'});
     };
     
     $scope.open = function () {
@@ -56,10 +56,12 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$localStor
         });
         modalInstance.result.then(function (recipe) {
             $scope.recipe.steps = [];
-            //$scope.$apply();
             $scope.recipe = recipe;
-        }, function () {
-            
+            $scope.save();
+        }, function (message) {
+            if (message) {
+                $rootScope.$broadcast('display-message', {type:'danger', message: message});
+            }
         });
     };
     
@@ -76,11 +78,28 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$localStor
         $scope.newRecipe({name: $scope.recipe.name + ' (cloned)'});
         $scope.recipe.steps = steps;
         storageService.save($scope.recipe);
-        messageService.inform('Information', 'Your recipe is cloned');
+        $rootScope.$broadcast('display-message', {type:'success', message:'Your recipe is cloned'});
     };
     
     $scope.newRecipe = function (data) {
         $scope.recipe = new recipe.Recipe(data);
+    };
+    
+    $scope.exportRecipe = function() {
+        var modalInstance = $modal.open({
+            templateUrl: 'views/modal-export.html',
+            controller: 'ModalExportCtrl',
+            size: '',
+            resolve: {
+                thisRecipe: function () {
+                    return $scope.recipe;
+                }
+            }
+        });
+        
+        modalInstance.result.then(function (recipe) {
+        }, function (message) {
+        });
     };
     
     /*************************************************/
@@ -103,6 +122,9 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$localStor
                 break;
             case 'save': 
                 $scope.save();
+                break;
+            case 'export': 
+                $scope.exportRecipe();
                 break;
             default:
                 break;

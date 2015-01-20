@@ -1,6 +1,10 @@
 /*global angular*/
 angular.module('BrewItYourself').provider('recipe', [ function () {
     'use strict';
+    
+    var generateLocalUUID = function() {
+        return new Date().getTime().toString(16).toUpperCase();
+    };
 
     this.$get = ['$http', '$q', function ($http, $q) {
         return {
@@ -19,10 +23,11 @@ angular.module('BrewItYourself').provider('recipe', [ function () {
                 this.name = '';
                 this.date = new Date();
                 this.author = '';
-                this.uuid = new Date().getTime().toString(16).toUpperCase();
+                this.uuid = generateLocalUUID();
                 this.steps = [];
                 angular.extend(this, data);
-            }
+            },
+            generateUUID: generateLocalUUID
         };
     }];
 }]);

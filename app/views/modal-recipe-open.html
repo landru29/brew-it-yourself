@@ -2,9 +2,27 @@
     <h3 class="modal-title open-icon">Open a recipe</h3>
 </div>
 <div class="modal-body">
-    <ul class="file-list">
-        <li class="file-to-open" ng-repeat="recipe in allRecipes" ng-click="select(recipe)" title="ID: {{recipe.uuid}}">{{recipe.name || "No name"}} - {{ recipe.date | date : "dd/MM/yyyy" }}</li>
-    </ul>
+    <accordion close-others="oneAtATime">
+        <accordion-group is-open="accordeonStatus.isFirstOpen" is-disabled="accordeonStatus.isFirstDisabled">
+            <accordion-heading>
+            Local storage <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': accordeonStatus.open, 'glyphicon-chevron-right': !accordeonStatus.open}"></i>
+            </accordion-heading>
+    
+            <ul class="file-list">
+                <li class="file-to-open" ng-repeat="recipe in allRecipes" ng-click="select(recipe)" title="ID: {{recipe.uuid}}">{{recipe.name || "No name"}} - {{ recipe.date | date : "dd/MM/yyyy" }}</li>
+            </ul>
+            
+        </accordion-group>
+        <accordion-group is-open="accordeonStatus.open">
+            <accordion-heading>
+            Import <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': accordeonStatus.open, 'glyphicon-chevron-right': !accordeonStatus.open}"></i>
+            </accordion-heading>
+            <p>Copy-paste this content in a new file and save it on your local disk: </p>
+            <textarea rows="7" cols="80" class="export" ng-model="json.recipe"></textarea>
+            <button class="btn btn-primary" ng-click="import()">import</button
+        </accordion-group>
+    </accordion>
+    
 </div>
 <div class="modal-footer">
     <button class="btn btn-warning" ng-click="cancel()">Cancel</button>

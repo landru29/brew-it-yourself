@@ -173,7 +173,7 @@ angular.module('BrewItYourself').provider('unitsConversion', [
         var UnitException = function(origin, message) {
             this.origin = origin;
             this.message = message;
-        }
+        };
 
         this.registerConversion = function (polynomeCoef, unit, type) {
             var decode = unit.match(/([\w-]*\.)?(.*)/);

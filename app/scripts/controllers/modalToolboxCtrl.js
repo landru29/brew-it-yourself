@@ -77,7 +77,7 @@ angular.module('BrewItYourself').controller('ModalToolboxCtrl', ['$scope', '$fil
                 if (calculated) {
                     this.alcohol = alcohol;
                 } else {
-                    this.alcohol = 0
+                    this.alcohol = 0;
                 }
                 
             }
