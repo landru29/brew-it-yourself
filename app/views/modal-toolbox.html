@@ -1,0 +1,42 @@
+<div class="modal-header">
+    <h3 class="modal-title toolbox-icon">Toolbox</h3>
+</div>
+<div class="modal-body">
+    <accordion close-others="oneAtATime">
+        <accordion-group is-open="accordeonStatus.isFirstOpen" is-disabled="accordeonStatus.isFirstDisabled">
+            <accordion-heading>
+            Alcohol <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': accordeonStatus.open, 'glyphicon-chevron-right': !accordeonStatus.open}"></i>
+            </accordion-heading>
+            <div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Initial gravity" aria-describedby="basic-addon2" ng-model="gravity.data.init">
+                    <span class="input-group-addon" id="basic-addon2">
+                        <a href="#" editable-select="gravity.data.initUnit" e-ng-options="s.value as s.text for s in gravity.unit"> {{ gravity.showUnit(gravity.data.initUnit) }}</a>
+                    </span>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Final gravity" aria-describedby="basic-addon2" ng-model="gravity.data.final">
+                    <span class="input-group-addon" id="basic-addon2">
+                        <a href="#" editable-select="gravity.data.finalUnit" e-ng-options="s.value as s.text for s in gravity.unit"> {{ gravity.showUnit(gravity.data.finalUnit) }}</a>
+                    </span>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">{{gravity.displayAlcohol()}}</span>
+                        Estimation
+                    </li>
+                </ul>
+            </div>
+        </accordion-group>
+        <accordion-group is-open="accordeonStatus.open">
+            <accordion-heading>
+            Unit convertion <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': accordeonStatus.open, 'glyphicon-chevron-right': !accordeonStatus.open}"></i>
+            </accordion-heading>
+            Coming soon
+        </accordion-group>
+    </accordion>
+        
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="close()">Close</button>
+</div>

@@ -88,7 +88,6 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$localStor
     /*************************************************/
     
     $scope.$on('menu-trigger', function(event, args) {
-        console.log(args);
         switch (args.action) {
             case 'trash': 
                 $scope.deleteRecipe();
@@ -104,6 +103,8 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$localStor
                 break;
             case 'save': 
                 $scope.save();
+                break;
+            default:
                 break;
         }
     });

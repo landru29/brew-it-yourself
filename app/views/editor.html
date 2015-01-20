@@ -2,11 +2,11 @@
     <div class="section">
         <div class="subsection">Recipe</div>
         <div class="recipe-header">
-            <span class="save-button" ng-click="save()" title="Save this recipe"></span>
+            <!--<span class="save-button" ng-click="save()" title="Save this recipe"></span>
             <span class="open-file-button" ng-click="open()" title="Open recipe"></span>
             <span class="new-button" ng-click="newRecipe()" title="New recipe"></span>
             <span class="clone-button" ng-click="cloneRecipe()" title="Clone recipe"></span>
-            <span class="delete-button" ng-click="deleteRecipe()" title="Delete recipe"></span>
+            <span class="delete-button" ng-click="deleteRecipe()" title="Delete recipe"></span>-->
             <ul>
                 <li>Name: <a href="#" editable-text="recipe.name">{{ recipe.name || "No name" }}</a></li>
                 <li>Author: <a href="#" editable-text="recipe.author">{{ recipe.author || "No name" }}</a></li>
@@ -17,7 +17,7 @@
     <div class="section">
         <div class="subsection">Steps</div>
         <div class="step-list">
-            <ul class="step-list" as-sortable="stepSortOptions" ng-model="recipe.steps">
+            <ul ng-show="recipe.steps.length" class="step-list" as-sortable="stepSortOptions" ng-model="recipe.steps">
                 <li ng-repeat="step in recipe.steps" as-sortable-item>
                     <div class="step" as-sortable-item-handle>
                         <div class="title" >

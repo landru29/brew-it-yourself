@@ -29,6 +29,10 @@ div.main-menu ul li {
     border-radius: 4px;
 }
 
+div.main-menu ul li.toolbox-icon,.modal-dialog h3.toolbox-icon {
+    background: url('img/icon-toolbox.png') no-repeat -24px 5px;
+    padding-left: 26px;
+}
 
 div.main-menu ul li.trash-icon {
     background: url('img/icon-delete.png') no-repeat -24px 5px;
@@ -40,7 +44,7 @@ div.main-menu ul li.clone-icon {
     padding-left: 26px;
 }
 
-div.main-menu ul li.open-icon {
+div.main-menu ul li.open-icon,.modal-dialog h3.open-icon {
     background: url('img/icon-open-file.png') no-repeat -24px 5px;
     padding-left: 26px;
 }

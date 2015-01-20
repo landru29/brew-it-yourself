@@ -19,6 +19,10 @@ div.section {
 div.vertical-bar {
 }
 
+.input-group {
+    margin-bottom:10px;
+}
+
 div.subsection {
     font-size: 32px;
     font-weight: bold;

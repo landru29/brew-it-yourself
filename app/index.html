@@ -27,6 +27,7 @@
                 <div class="main-title">Brew it yourself</div>
                 <div class="main-menu" ng-controller="MenuCtrl">
                     <ul>
+                        <li class="toolbox-icon" ng-click="triggerAction('tools')">Tools</li>
                         <li class="trash-icon" ng-click="triggerAction('trash')">Trash</li>
                         <li class="clone-icon" ng-click="triggerAction('clone')">Clone</li>
                         <li class="new-icon" ng-click="triggerAction('new')">New</li>
@@ -35,6 +36,8 @@
                     </ul>
                 </div>
                 <div class="view-container" ng-view="">
+                </div>
+                <div ng-controller="ToolsCtrl">
                 </div>
             </div>
         </div>
@@ -59,11 +62,15 @@
     <script type="text/javascript" src="scripts/controllers/menuCtrl.js"> </script>
     <script type="text/javascript" src="scripts/controllers/modalRecipeOpenCtrl.js"> </script>
     <script type="text/javascript" src="scripts/controllers/modalIngredientPickCtrl.js"> </script>
+    <script type="text/javascript" src="scripts/controllers/modalToolboxCtrl.js"> </script>
+    <script type="text/javascript" src="scripts/controllers/toolsCtrl.js"></script>
     <script type="text/javascript" src="scripts/services/messageService.js"> </script>
     <script type="text/javascript" src="scripts/services/storageService.js"> </script>
-    <script type="text/javascript" src="scripts/services/ingredientProvider.js"> </script>
-    <script type="text/javascript" src="scripts/services/utilFactory.js"> </script>
-    <script type="text/javascript" src="scripts/services/recipeProvider.js"> </script>
+    <script type="text/javascript" src="scripts/services/ingredientService.js"> </script>
+    <script type="text/javascript" src="scripts/services/utilService.js"> </script>
+    <script type="text/javascript" src="scripts/services/brewService.js"> </script>
+    <script type="text/javascript" src="scripts/services/recipeService.js"> </script>
+    <script type="text/javascript" src="scripts/services/unitsConversionService.js"></script>
     <script type="text/javascript" src="scripts/directives/treeView.js"> </script>
     <script type="text/javascript" src="scripts/directives/ingredientItem.js"> </script>
     <!-- endbuild -->
