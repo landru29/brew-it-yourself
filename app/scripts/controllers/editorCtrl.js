@@ -30,7 +30,17 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
     };
     
     $scope.stepSortOptions = {
-        containment: '#sortable-container'
+        containment: '#sortable-container',
+        dragStart: function(event) {
+            event.source.itemScope.step.$moving = true;
+        },
+        dragEnd: function(event) {
+            delete(event.source.itemScope.step.$moving);
+        }
+    };
+    
+    $scope.toggleStep = function(step) {
+        step.$reduced = !step.$reduced;
     };
     
     
@@ -54,10 +64,12 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
                 }
             }
         });
-        modalInstance.result.then(function (recipe) {
+        modalInstance.result.then(function (data) {
             $scope.recipe.steps = [];
-            $scope.recipe = recipe;
-            $scope.save();
+            $scope.recipe = data.recipe;
+            if (data.action==='import') {
+                $scope.save();
+            }
         }, function (message) {
             if (message) {
                 $rootScope.$broadcast('display-message', {type:'danger', message: message});

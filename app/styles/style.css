@@ -77,15 +77,40 @@ span.close-button,span.suppr-button {
     
 }
 
-span.ingredient {
-    width: 270px;
-    display: inline-block;
-}
-
 span.close-button:hover,span.suppr-button:hover {
     background-position: 100%;
 }
 
+span.reduce-button {
+    display:inline-block;
+    background: url('img/icon-reduce.png') no-repeat;
+    width:24px;
+    height:24px;
+    cursor:pointer;
+    
+}
+
+span.reduce-button:hover {
+    background-position: 100%;
+}
+
+span.expand-button {
+    display:inline-block;
+    background: url('img/icon-expand.png') no-repeat;
+    width:24px;
+    height:24px;
+    cursor:pointer;
+    
+}
+
+span.expand-button:hover {
+    background-position: 100%;
+}
+
+span.ingredient {
+    width: 270px;
+    display: inline-block;
+}
 
 span.save-button {
     display:inline-block;

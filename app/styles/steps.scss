@@ -100,6 +100,12 @@ div.step span.close-button {
     right: -352px;
 }
 
+div.step span.reduce-button,div.step span.expand-button {
+    position: relative;
+    top: -40px;
+    right: -295px;
+}
+
 ul.step-list {
     list-style-type: none;
     padding: 0px;
@@ -136,15 +142,26 @@ div.step-list {
     margin: 0px 0px 0px 50px;
 }
 
-ul.step-list li.ng-enter,ul.step-list li.ng-leave {
-    @include animation-duration(1s);
-    @include animation-fill-mode(both);
+ul.step-list li.ng-enter:not(.sorting),ul.step-list li.ng-leave:not(.sorting) {
+    @include transition-property(max-height);
+    @include transition-duration(1s);
 }
 
-ul.step-list li.ng-enter {
-    @include animation-name(zoomIn);
+ul.step-list li.ng-enter:not(.sorting) {
+    max-height:0;
+    overflow: hidden;
 }
 
-ul.step-list li.ng-leave {
-    @include animation-name(zoomOut);
+ul.step-list li.ng-enter.ng-enter-active:not(.sorting) {
+    max-height:999px;
 }
+
+ul.step-list li.ng-leave:not(.sorting) {
+    max-height:500px;
+    overflow: hidden;
+}
+
+ul.step-list li.ng-leave.ng-leave-active:not(.sorting) {
+    max-height:0;
+}
+

@@ -17,14 +17,14 @@ angular.module('BrewItYourself').controller('ModalRecipeOpenCtrl', ['$scope', '$
         try {
             thisRecipe = JSON.parse($scope.json.recipe);
             thisRecipe.uuid = recipe.generateUUID();
-            $modalInstance.close(thisRecipe);
+            $modalInstance.close({recipe:thisRecipe, action:'import'});
         } catch (e) {
             $modalInstance.dismiss('You are trying to import bullshit. Unfortunately, this won\'t work.');
         }
     };
 
     $scope.select = function (thisRecipe) {
-        $modalInstance.close(thisRecipe);
+        $modalInstance.close({recipe:thisRecipe, action:'open'});
     };
 
     $scope.cancel = function () {
