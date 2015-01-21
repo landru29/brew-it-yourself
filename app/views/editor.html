@@ -11,6 +11,7 @@
                 <li>Name: <a href="#" editable-text="recipe.name">{{ recipe.name || "No name" }}</a></li>
                 <li>Author: <a href="#" editable-text="recipe.author">{{ recipe.author || "No name" }}</a></li>
                 <li>Date: <a href="#" editable-date="recipe.date">{{ recipe.date | date : "dd/MM/yyyy" }}</a></li>
+                <li><span class="water">Mashing volume:</span><span class="badge">{{getMashingVolume()}} L</span></li>
             </ul>
         </div>
     </div>

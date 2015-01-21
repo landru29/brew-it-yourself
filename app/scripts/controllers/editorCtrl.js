@@ -1,5 +1,5 @@
 /*global angular */
-angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope', '$localStorage', '$modal', 'messageService', 'storageService', 'util', 'recipe', function ($scope, $rootScope, $localStorage, $modal, messageService, storageService, util, recipe) {
+angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope', '$localStorage', '$modal', 'messageService', 'storageService', 'util', 'recipe', 'brew', function ($scope, $rootScope, $localStorage, $modal, messageService, storageService, util, recipe, brew) {
     "use strict";
     
     $scope.insertIngredient = function (step) {
@@ -43,6 +43,10 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         step.$reduced = !step.$reduced;
     };
     
+    $scope.getMashingVolume = function() {
+        var grain = recipe.getFermentableMass($scope.recipe);
+        return brew.mashingVolume(grain);
+    }
     
     /*************************************************/
     /** MENU ACTIONS                                **/
