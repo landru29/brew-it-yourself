@@ -71,6 +71,7 @@ span.computed {
     padding-top:3px;
     margin-top: 6px;
     border-top: solid 1px #aaaaaa;
+    font-weight: bold;
 }
 
 
@@ -250,16 +251,30 @@ div.ingredient-database {
 
 span.water {
     display: inline-block;
-    padding-left: 20px;
+    padding-left: 24px;
     padding-right: 5px;
     background: url("img/icon-water.png") no-repeat;
 }
 
+span.hops {
+    display: inline-block;
+    padding-left: 24px;
+    padding-right: 5px;
+    background: url("img/icon-hops.png") no-repeat 0px 3px;
+}
+
 span.gravity {
     display: inline-block;
-    padding-left: 20px;
+    padding-left: 24px;
     padding-right: 5px;
-    background: url("img/icon-gravity.png") no-repeat -28px 0;
+    background: url("img/icon-gravity.png") no-repeat -26px 0;
+}
+
+span.drink {
+    display: inline-block;
+    padding-left: 24px;
+    padding-right: 5px;
+    background: url("img/icon-drink.png") no-repeat -24px 0;
 }
 
 span.libelized {

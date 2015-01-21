@@ -10,7 +10,7 @@ angular.module('BrewItYourself').provider('recipe', [ function () {
         var result = [];
         for (var stpIndex in recipe.steps) {
             for (var igdIndex in recipe.steps[stpIndex].ingredients) {
-                result.push(recipe.steps[stpIndex].ingredients[igdIndex]);
+                result.push(angular.extend({step:recipe.steps[stpIndex]}, recipe.steps[stpIndex].ingredients[igdIndex]));
             }
         }
         return result;
@@ -25,6 +25,10 @@ angular.module('BrewItYourself').provider('recipe', [ function () {
             }
         }
         return result;
+    };
+    
+    var getMinutes = function(lasting) {
+        return lasting.minutes + lasting.hours*60 + lasting.days*60*24;
     };
 
     this.$get = ['$http', '$q', 'unitsConversion', function ($http, $q, unitsConversion) {
@@ -62,6 +66,21 @@ angular.module('BrewItYourself').provider('recipe', [ function () {
                             mass: unitsConversion.fromTo(qty.value, qty.unit.type, 'kg'),
                             yield: fermentable[index].yield,
                             color: fermentable[index].color
+                        });
+                    }
+                }
+                return result;
+            },
+            getHops: function (recipe) {
+                var hops = getIngredientsByType(recipe, 'hop');
+                var result=[];
+                for (var index in hops) {
+                    var qty = hops[index].qty;
+                    if (qty) {
+                        result.push({
+                            mass: unitsConversion.fromTo(qty.value, qty.unit.type, 'g'),
+                            alpha: hops[index].alpha,
+                            lasting: getMinutes(hops[index].step.lasting)
                         });
                     }
                 }

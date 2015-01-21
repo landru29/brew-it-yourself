@@ -17,6 +17,12 @@ npm install -g grunt-cli
 npm install -g bower
 ```
 
+You also need sass and compass (for scss compilation)
+```shell
+gem install sass
+gem install compass
+```
+
  Then, from the main folder :
 ```shell
 npm install

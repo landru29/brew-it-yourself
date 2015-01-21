@@ -6,6 +6,7 @@ angular.module('BrewItYourself').provider('brew', ['unitsConversionProvider',
         var mashingRatio = 3;
         var globalYield = 90;
         var retentionWaterRate = 1;
+        var defaultFinalGravity = 1.010;
         
         this.setMashingRation = function (ratio) {
             mashingRatio = ratio;
@@ -13,12 +14,17 @@ angular.module('BrewItYourself').provider('brew', ['unitsConversionProvider',
         
         this.setGlobalYield = function (newYield) {
             globalYield = newYield;
-        }
+        };
         
         
         this.setRetentionWaterRate = function(rate) {
             retentionWaterRate = rate;
-        }
+        };
+        
+        this.setDefaultGravity = function(gravity) {
+            defaultFinalGravity = gravity;
+        };
+        
         /**
          * Compute the volume of water to add to the malt
          *
@@ -72,6 +78,29 @@ angular.module('BrewItYourself').provider('brew', ['unitsConversionProvider',
                 return (grain.mass ? sugarEstim(grain.mass, grain.yield) : 0);
             }
         };
+        
+        var ibuEstimation = function(hops, gravity, volume) {
+            if ('[object Array]' === Object.prototype.toString.call( hops )) {
+                var result=0;
+                for (var index in hops) {
+                    result += getIbu(hops[index].alpha, hops[index].mass, volume, gravity, hops[index].lasting);
+                }
+                return result;
+            } else {
+                return (hops.mass ? getIbu(hops.alpha, hops.mass, volume, gravity, hops.lasting) : 0);
+            }
+        };
+        
+        var getIbu = function(alphaAcidity, massGr, volume, gravity, lasting) {
+            return (alphaAcidity*massGr*10/volume) * (1.65 * Math.pow(1.25e-4, gravity-1)) * (1-Math.exp(-0.04*lasting))/4.15;
+        };
+        
+        var getAlcohol = function(initialGravity, finalGravity) {
+            if (!finalGravity) {
+                finalGravity = defaultFinalGravity;
+            }
+            return (initialGravity > finalGravity ? unitsConversionProvider.fromTo(1 + initialGravity - finalGravity, 'sugar.sg', 'alcohol'):0);
+        };
 
         this.$get = [function () {
             return {
@@ -94,8 +123,9 @@ angular.module('BrewItYourself').provider('brew', ['unitsConversionProvider',
                 gravityEstimation: function(grain, liquidVol) {
                     var sugar = sugarEstimation(grain);
                     return gravity(sugar, liquidVol);
-                }
-                
+                },
+                ibuEstimation:ibuEstimation,
+                getAlcohol: getAlcohol
             };
         }];
     }]);

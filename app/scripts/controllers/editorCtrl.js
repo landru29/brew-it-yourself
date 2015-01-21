@@ -44,8 +44,10 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
     };
     
     $scope.getRinsingWater = function() {
-        return recipe.getLiquidVolume($scope.recipe) - $scope.getMashingVolume();
-    }
+        var liquidVol = recipe.getLiquidVolume($scope.recipe);
+        var mashingVolume = $scope.getMashingVolume();
+        return (liquidVol > mashingVolume ? liquidVol - mashingVolume : 0);
+    };
     
     $scope.getMashingVolume = function() {
         var grain = recipe.getFermentableMass($scope.recipe);
@@ -61,6 +63,15 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
     $scope.getInitialGravity = function() {
         var grain = recipe.getFermentableMass($scope.recipe);
         return brew.gravityEstimation (grain, $scope.getFinalVolume());
+    };
+    
+    $scope.getIbu = function() {
+        var hops = recipe.getHops($scope.recipe);
+        return brew.ibuEstimation(hops, $scope.getInitialGravity(), $scope.getFinalVolume());
+    };
+    
+    $scope.getAlcohol = function() {
+        return brew.getAlcohol($scope.getInitialGravity()) * 100;
     };
     
     /*************************************************/
