@@ -1,6 +1,6 @@
 /*global angular*/
-angular.module('BrewItYourself').provider('brew', [
-    function () {
+angular.module('BrewItYourself').provider('brew', ['unitsConversionProvider',
+    function (unitsConversionProvider) {
         'use strict';
 
         var mashingRatio = 3;
@@ -34,7 +34,7 @@ angular.module('BrewItYourself').provider('brew', [
             return ratio * grainMass;
         };
         
-        var sugarEstimation = function(grainMass, grainYield) {
+        var sugarEstim = function(grainMass, grainYield) {
             return grainMass * grainYield * globalYield / 10000;
         };
         
@@ -51,6 +51,26 @@ angular.module('BrewItYourself').provider('brew', [
                 grainMass = (grain.mass ? grain.mass : 0);
             }
             return grainMass * retentionRate;
+        };
+        
+        var gravity = function(sugarMass, liquidVol) {
+            if (!liquidVol) {
+                return 1.0;
+            }
+            var gPerLiter = 1000*sugarMass/liquidVol;
+            return unitsConversionProvider.fromTo(gPerLiter, 'sugar.gPerLiter', 'sg');
+        };
+        
+        var sugarEstimation = function(grain) {
+            if ('[object Array]' === Object.prototype.toString.call( grain )) {
+                var result=0;
+                for (var index in grain) {
+                    result += sugarEstim(grain[index].mass, grain[index].yield);
+                }
+                return result;
+            } else {
+                return (grain.mass ? sugarEstim(grain.mass, grain.yield) : 0);
+            }
         };
 
         this.$get = [function () {
@@ -70,17 +90,12 @@ angular.module('BrewItYourself').provider('brew', [
                     var retention = liquidRetention(grain, retentionRate);
                     return (liquid>retention ? liquid - retention : 0);
                 },
-                sugarEstimation: function(grain) {
-                    if ('[object Array]' === Object.prototype.toString.call( grain )) {
-                        var result=0;
-                        for (var index in grain) {
-                            result += sugarEstimation(grain[index].mass, grain[index].yield);
-                        }
-                        return result;
-                    } else {
-                        return (grain.mass ? mashingVolume(grain.mass, grain.yield) : 0);
-                    }
+                sugarEstimation: sugarEstimation,
+                gravityEstimation: function(grain, liquidVol) {
+                    var sugar = sugarEstimation(grain);
+                    return gravity(sugar, liquidVol);
                 }
+                
             };
         }];
     }]);

@@ -254,3 +254,14 @@ span.water {
     padding-right: 5px;
     background: url("img/icon-water.png") no-repeat;
 }
+
+span.gravity {
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 5px;
+    background: url("img/icon-gravity.png") no-repeat -28px 0;
+}
+
+span.libelized {
+    width: 150px;
+}

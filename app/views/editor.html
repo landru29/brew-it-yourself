@@ -14,9 +14,10 @@
             </ul>
             <span class="computed">Computed:</span>
             <ul>
-                <li><span class="water">Mashing volume:</span><span class="badge">{{getMashingVolume()}} L</span></li>
-                <li><span class="water">Rinsing volume:</span><span class="badge">{{getRinsingWater()}} L</span></li>
-                <li><span class="water">Final volume:</span><span class="badge">{{getFinalVolume()}} L</span></li>
+                <li><span class="water libelized">Mashing volume:</span><span class="badge">{{getMashingVolume() | number:1}} L</span></li>
+                <li><span class="water libelized">Rinsing volume:</span><span class="badge">{{getRinsingWater() | number:1}} L</span></li>
+                <li><span class="water libelized">Final volume:</span><span class="badge">{{getFinalVolume()  | number:1}} L</span></li>
+                <li><span class="gravity libelized">Initial gravity:</span><span class="badge">{{getInitialGravity() | number:3}}</span></li>
             </ul>
         </div>
     </div>

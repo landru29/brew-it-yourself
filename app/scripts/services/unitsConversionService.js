@@ -117,6 +117,15 @@ angular.module('BrewItYourself').provider('unitsConversion', [
                 }),
                 sg: polynome({ // sg -> sg
                     a1: 1
+                }),
+                /*gPerLiter: polynome({
+                    a0: -5881.25865,
+                    a1: 9098.641778,
+                    a2: -3216.783128
+                })*/
+                gPerLiter: polynome({
+                    a0: -2503.6363636389,
+                    a1: 2503.6363636389
                 })
             },
             mass: {
@@ -174,6 +183,34 @@ angular.module('BrewItYourself').provider('unitsConversion', [
             this.origin = origin;
             this.message = message;
         };
+        
+        var fromTo = function (value, from, to, type) {
+            var decodeFrom = from.match(/(([\w-]*)\.)?(.*)/);
+            var decodeTo = to.match(/(([\w-]*)\.)?(.*)/);
+            var unitTo = decodeTo[3];
+            var unitFrom = decodeFrom[3];
+            if ('string' === typeof value) {
+                value = parseFloat(value);
+            }
+            if (!type) {
+                type = decodeFrom[2];
+            }
+
+            if (!conversionObject[type]) {
+                throw new UnitException('from', 'Type ' + type + ' does not exist in the unit conversion system');
+            }
+            if (!conversionObject[type][unitFrom]) {
+                throw new UnitException('from', 'Unit ' + unitFrom + ' does not exist for type ' + type);
+            }
+            if (!conversionObject[type][unitTo]) {
+                throw new UnitException('to', 'Unit ' + unitTo + ' does not exist for type ' + type);
+            }
+            var SiValue = conversionObject[type][unitFrom].solve(value);
+            if ('number' !== typeof SiValue) {
+                throw new UnitException('from', 'Value ' + value + ' is out of bounce in unit ' + unitFrom + ', type ' + type);
+            }
+            return conversionObject[type][unitTo].compute(SiValue);
+        };
 
         this.registerConversion = function (polynomeCoef, unit, type) {
             var decode = unit.match(/([\w-]*\.)?(.*)/);
@@ -186,38 +223,14 @@ angular.module('BrewItYourself').provider('unitsConversion', [
             }
             conversionObject[type][thisUnit] = polynome(polynomeCoef);
         };
+        
+        this.fromTo = fromTo;
 
         this.$get = [
 
             function () {
                 return {
-                    fromTo: function (value, from, to, type) {
-                        var decodeFrom = from.match(/(([\w-]*)\.)?(.*)/);
-                        var decodeTo = to.match(/(([\w-]*)\.)?(.*)/);
-                        var unitTo = decodeTo[3];
-                        var unitFrom = decodeFrom[3];
-                        if ('string' === typeof value) {
-                            value = parseFloat(value);
-                        }
-                        if (!type) {
-                            type = decodeFrom[2];
-                        }
-                        
-                        if (!conversionObject[type]) {
-                            throw new UnitException('from', 'Type ' + type + ' does not exist in the unit conversion system');
-                        }
-                        if (!conversionObject[type][unitFrom]) {
-                            throw new UnitException('from', 'Unit ' + unitFrom + ' does not exist for type ' + type);
-                        }
-                        if (!conversionObject[type][unitTo]) {
-                            throw new UnitException('to', 'Unit ' + unitTo + ' does not exist for type ' + type);
-                        }
-                        var SiValue = conversionObject[type][unitFrom].solve(value);
-                        if ('number' !== typeof SiValue) {
-                            throw new UnitException('from', 'Value ' + value + ' is out of bounce in unit ' + unitFrom + ', type ' + type);
-                        }
-                        return conversionObject[type][unitTo].compute(SiValue);
-                    }
+                    fromTo: fromTo
                 };
         }];
             }]);

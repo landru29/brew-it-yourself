@@ -56,7 +56,12 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         var liquidInitialVol = recipe.getLiquidVolume($scope.recipe);
         var grain = recipe.getFermentableMass($scope.recipe);
         return brew.liquidEstimation(liquidInitialVol, grain);
-    }
+    };
+    
+    $scope.getInitialGravity = function() {
+        var grain = recipe.getFermentableMass($scope.recipe);
+        return brew.gravityEstimation (grain, $scope.getFinalVolume());
+    };
     
     /*************************************************/
     /** MENU ACTIONS                                **/
