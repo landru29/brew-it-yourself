@@ -57,11 +57,24 @@ angular.module('BrewItYourself').provider('recipe', [ function () {
                 var result=[];
                 for (var index in fermentable) {
                     var qty = fermentable[index].qty;
-                    result.push({
-                        mass: unitsConversion.fromTo(qty.value, qty.unit.type, 'kg'),
-                        yield: fermentable[index].yield/100,
-                        color: fermentable[index].color
-                    });
+                    if (qty) {
+                        result.push({
+                            mass: unitsConversion.fromTo(qty.value, qty.unit.type, 'kg'),
+                            yield: fermentable[index].yield,
+                            color: fermentable[index].color
+                        });
+                    }
+                }
+                return result;
+            },
+            getLiquidVolume: function(recipe) {
+                var water = getIngredientsByType(recipe, 'water');
+                var result=0;
+                for (var index in water) {
+                    var qty = water[index].qty;
+                    if (qty) {
+                        result += unitsConversion.fromTo(qty.value, qty.unit.type, 'l');
+                    }
                 }
                 return result;
             }

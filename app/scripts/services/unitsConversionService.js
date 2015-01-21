@@ -213,7 +213,7 @@ angular.module('BrewItYourself').provider('unitsConversion', [
                             throw new UnitException('to', 'Unit ' + unitTo + ' does not exist for type ' + type);
                         }
                         var SiValue = conversionObject[type][unitFrom].solve(value);
-                        if ((!SiValue) || ('number' !== typeof SiValue)) {
+                        if ('number' !== typeof SiValue) {
                             throw new UnitException('from', 'Value ' + value + ' is out of bounce in unit ' + unitFrom + ', type ' + type);
                         }
                         return conversionObject[type][unitTo].compute(SiValue);

@@ -134,7 +134,7 @@ angular.module('BrewItYourself').directive('ingredientItem', ['$compile', functi
             
             var template = icon + qty + caption;
 
-            element.html('').append($compile(template)(scope));
+            element.html('').prepend($compile(template)(scope));
         }
     };
     

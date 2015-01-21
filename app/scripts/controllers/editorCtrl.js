@@ -15,8 +15,8 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         });
     };
     
-    $scope.deleteIngredient = function (step, index) {
-        util.deleteFromArray(step.ingredients, index);
+    $scope.deleteIngredient = function (step, ingredient) {
+        step.ingredients.splice(step.ingredients.indexOf(ingredient), 1);
     };
     
     $scope.recipe = new recipe.Recipe();
@@ -25,8 +25,8 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         $scope.recipe.steps.push(new recipe.Step());
     };
     
-    $scope.deleteStep = function (index) {
-        $scope.recipe.steps.splice(index, 1);
+    $scope.deleteStep = function (step) {
+        $scope.recipe.steps.splice($scope.recipe.steps.indexOf(step), 1);
     };
     
     $scope.stepSortOptions = {
@@ -43,9 +43,19 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         step.$reduced = !step.$reduced;
     };
     
+    $scope.getRinsingWater = function() {
+        return recipe.getLiquidVolume($scope.recipe) - $scope.getMashingVolume();
+    }
+    
     $scope.getMashingVolume = function() {
         var grain = recipe.getFermentableMass($scope.recipe);
         return brew.mashingVolume(grain);
+    };
+    
+    $scope.getFinalVolume = function() {
+        var liquidInitialVol = recipe.getLiquidVolume($scope.recipe);
+        var grain = recipe.getFermentableMass($scope.recipe);
+        return brew.liquidEstimation(liquidInitialVol, grain);
     }
     
     /*************************************************/

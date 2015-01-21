@@ -11,7 +11,12 @@
                 <li>Name: <a href="#" editable-text="recipe.name">{{ recipe.name || "No name" }}</a></li>
                 <li>Author: <a href="#" editable-text="recipe.author">{{ recipe.author || "No name" }}</a></li>
                 <li>Date: <a href="#" editable-date="recipe.date">{{ recipe.date | date : "dd/MM/yyyy" }}</a></li>
+            </ul>
+            <span class="computed">Computed:</span>
+            <ul>
                 <li><span class="water">Mashing volume:</span><span class="badge">{{getMashingVolume()}} L</span></li>
+                <li><span class="water">Rinsing volume:</span><span class="badge">{{getRinsingWater()}} L</span></li>
+                <li><span class="water">Final volume:</span><span class="badge">{{getFinalVolume()}} L</span></li>
             </ul>
         </div>
     </div>
@@ -23,7 +28,7 @@
                     <div class="step" as-sortable-item-handle>
                         <div class="title" >
                             <a href="#" editable-text="step.name" title="name">{{ step.name || "No name" }}</a>
-                            <span class="close-button" ng-click="deleteStep($index)"></span>
+                            <span class="close-button" ng-click="deleteStep(step)"></span>
                             <span ng-class="{'reduce-button':!(step.$reduced), 'expand-button':step.$reduced}" ng-click="toggleStep(step)"></span>
                         </div>
                         <div class="detail" ng-hide="step.$reduced">
@@ -43,8 +48,9 @@
                                 <label>Ingredients:</label>
                                 <div>
                                     <ul class="ingredient-item-list">
-                                        <li ng-repeat="ingredient in step.ingredients" ingredient-item="ingredient">
-                                            <!--<span class="ingredient">{{ingredient.name}}</span><span class="suppr-button" ng-click="deleteIngredient(step, $index)"></span>-->
+                                        <li ng-repeat="ingredient in step.ingredients" class="ingredient-item">
+                                            <span ingredient-item="ingredient"></span>
+                                            <span class="suppr-button" ng-click="deleteIngredient(step, ingredient)">
                                         </li>
                                         <li class="dummy" ng-click="insertIngredient(step)">New ingredient</li>
                                     </ul>

@@ -1,3 +1,5 @@
+@import "compass/css3/animation";
+
 i.fermentable-icon {
     background: url("img/icon-malt.png") no-repeat;
     width: 20px;
@@ -41,4 +43,14 @@ ul.ingredient-item-list {
     list-style-type: none;
     padding:0px;
     margin:0px;
+}
+
+ul.ingredient-item-list li.ingredient-item.ng-leave {
+    @include animation-duration(1s);
+    @include animation-fill-mode(both);
+}
+
+
+ul.ingredient-item-list li.ingredient-item.ng-leave {
+    @include animation-name(rollOut);
 }
