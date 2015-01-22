@@ -21,8 +21,6 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         step.ingredients.splice(step.ingredients.indexOf(ingredient), 1);
     };
     
-    $scope.recipe = new recipe.Recipe();
-    
     $scope.pushStep = function () {
         $scope.recipe.steps.push(new recipe.Step());
     };
@@ -109,6 +107,7 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
             if (data.action==='import') {
                 $scope.save();
             }
+            $localStorage.current = $scope.recipe;
         }, function (message) {
             if (message) {
                 $rootScope.$broadcast('display-message', {type:'danger', message: message});
@@ -134,6 +133,7 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
     
     $scope.newRecipe = function (data) {
         $scope.recipe = new recipe.Recipe(data);
+        $localStorage.current = $scope.recipe;
     };
     
     $scope.exportRecipe = function() {
@@ -151,6 +151,10 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         modalInstance.result.then(function (recipe) {
         }, function (message) {
         });
+    };
+    
+    $scope.togglePrint = function() {
+        $scope.printing = !($scope.printing);
     };
     
     /*************************************************/
@@ -177,10 +181,20 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
             case 'export': 
                 $scope.exportRecipe();
                 break;
+            case 'print': 
+                $scope.togglePrint();
+                break;
             default:
                 break;
         }
     });
     
+    if ($localStorage.current) {
+        $scope.recipe = $localStorage.current;
+    } else {
+        $scope.newRecipe();
+    }
+    
+    $scope.printing = false;
 }]);
 

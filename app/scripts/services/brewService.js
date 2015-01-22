@@ -93,12 +93,15 @@ angular.module('BrewItYourself').provider('brew', ['unitsConversionProvider',
         
         var estimateSRM = function(grain, liquid) {
             var mcu = 0;
+            var lovi;
              if ('[object Array]' === Object.prototype.toString.call( grain )) {
                 for (var index in grain) {
-                    mcu += 8.34540445202 * grain[index].color * grain[index].mass / liquid;
+                    lovi = unitsConversionProvider.fromTo(grain[index].color, 'color.ebc', 'lovibond');
+                    mcu += 8.34540445202 * lovi * grain[index].mass / liquid;
                 }
             } else {
-                 mcu += 8.34540445202 * grain.color * grain.mass / liquid;
+                 lovi = unitsConversionProvider.fromTo(grain.color, 'color.ebc', 'lovibond');
+                 mcu += 8.34540445202 * lovi * grain.mass / liquid;
             }
             var srm = 1.4922 * Math.pow(mcu, 0.6859);
             return {

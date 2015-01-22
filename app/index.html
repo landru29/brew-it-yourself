@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="styles/messages.css">
         <link rel="stylesheet" href="styles/tree.css">
         <link rel="stylesheet" href="styles/steps.css">
+        <link rel="stylesheet" href="styles/print.css">
         <!-- endbuild -->
         
         <!-- build:css(./build) styles/compiled.min.css -->
@@ -34,7 +35,7 @@
             <div class="main-frame" ng-app="BrewItYourself">
                 <div class="main-title">Brew it yourself</div>
                 <div class="main-menu" ng-controller="MenuCtrl">
-                    <ul>
+                    <ul ng-hide="printing">
                         <li class="toolbox-icon" ng-click="triggerAction('tools')">Tools</li>
                         <li class="trash-icon" ng-click="triggerAction('trash')">Trash</li>
                         <li class="clone-icon" ng-click="triggerAction('clone')">Clone</li>
@@ -42,6 +43,10 @@
                         <li class="open-icon" ng-click="triggerAction('open')">Open</li>
                         <li class="save-icon" ng-click="triggerAction('save')">Save</li>
                         <li class="export-icon" ng-click="triggerAction('export')">Export</li>
+                        <li class="print-icon" ng-click="togglePrint()">Print</li>
+                    </ul>
+                    <ul ng-show="printing">
+                        <li class="edit-icon" ng-click="togglePrint()">Edition</li>
                     </ul>
                 </div>
                 <div class="messages" ng-controller="MessageCtrl">
@@ -87,6 +92,7 @@
     <script type="text/javascript" src="scripts/services/brewService.js"> </script>
     <script type="text/javascript" src="scripts/services/recipeService.js"> </script>
     <script type="text/javascript" src="scripts/filters/ucfirstFilter.js"></script>
+    <script type="text/javascript" src="scripts/filters/leadingzeroFilter.js"></script>
     <script type="text/javascript" src="scripts/directives/treeView.js"> </script>
     <script type="text/javascript" src="scripts/directives/ingredientItem.js"> </script>
     <!-- endbuild -->

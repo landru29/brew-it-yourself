@@ -1,0 +1,78 @@
+div.print h1{
+    text-align: center;
+    font-weight: bold;
+}
+
+div.print span.author{
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+div.print span.date{
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
+
+div.print div.recipe {
+    margin-top: 50px;
+    text-align: center;
+}
+
+div.print div.recipe div.container {
+    display: inline-block;
+    width: 750px;
+    text-align: left;
+}
+
+div.print div.recipe div.container div.title {
+    display: block;
+}
+
+div.print div.recipe div.container div.step {
+    padding-left:15px;
+}
+
+div.print div.recipe div.container div.title span.name {
+    display: inline-block;
+    font-size: 24px;
+    padding-right:15px;
+    width: 400px;
+}
+
+div.print div.recipe div.container div.title span.temperature {
+    display: inline-block;
+    font-size: 18px;
+    border: solid 1px #dddddd;
+    padding: 0 5px 0 5px;
+    width: 80px;
+    text-align: center;
+}
+
+div.print div.recipe div.container div.title span.time {
+    display: inline-block;
+    font-size: 18px;
+    padding-left: 50px;
+}
+
+div.print div.recipe div.container ul.ingredients {
+    padding-bottom:20px;
+    list-style-type: none;
+    
+}
+
+div.print div.recipe div.container ul.ingredients span.quantity {
+    display: inline-block;
+    width:50px;
+}
+
+div.print div.recipe div.container ul.features {
+    display:block;
+    border-top: solid 1px #aaaaaa;
+    border-bottom: solid 1px #dddddd;
+    margin: 20px 0 30px 0;
+    list-style-type: none;
+    padding:10px 0 10px 80px;
+}

@@ -1,4 +1,4 @@
-<div class="editor">
+<div class="editor" ng-hide="printing">
     <div class="section">
         <div class="subsection">Recipe</div>
         <div class="recipe-header">
@@ -67,6 +67,45 @@
 
             <div class="dummy-step" ng-click="pushStep()">
                 New Step
+            </div>
+        </div>
+    </div>
+</div>
+<div class="print" ng-show="printing">
+    <h1>{{recipe.name}}</h1>
+    <span class="author">{{recipe.author}}</span>
+    <span class="date">- {{recipe.date | date : "dd/MM/yyyy" }} -</span>
+    <div class="recipe">
+        <div class="container">
+            <ul class="features">
+                <li><span class="water libelized">Mashing volume:</span><span >{{getMashingVolume() | number:1}} L</span></li>
+                <li><span class="water libelized">Rinsing volume:</span><span >{{getRinsingWater() | number:1}} L</span></li>
+                <li><span class="water libelized">Final volume:</span><span >{{getFinalVolume()  | number:1}} L</span></li>
+                <li><span class="gravity libelized">Initial gravity:</span><span >{{getInitialGravity() | number:3}}</span></li>
+                <li><span class="hops libelized">IBU:</span><span >{{getIbu() | number:0}}</span></li>
+                <li><span class="drink libelized">Alcohol:</span><span >{{getAlcohol() | number:1}} %Vol</span></li>
+                <li><span class="drink libelized">Color (srm):</span><span class="beer-color" style="background: {{estimateSRM().color}}" title="Beer color">{{estimateSRM().srm | number:1}}</span></li>
+            </ul>
+            <div class="step" ng-repeat="step in recipe.steps">
+                <div class="title">
+                    <span class="name">{{$index}} - {{step.name}}</span>
+                    <span class="temperature">{{step.temperature | number:0}} °c</span>
+                    <span class="time">
+                        <i class="glyphicon glyphicon-time"></i>
+                        <span ng-show="step.lasting.days"><ng-pluralize count="step.lasting.days" when="{'0': '', 'one': '1 day', 'other': '{} days'}"></ng-pluralize></span>
+                        <span ng-show="step.lasting.hours || step.lasting.minutes">{{step.lasting.hours | leadingzero:2}}:{{step.lasting.minutes | leadingzero:2}}</span>
+                    </span>
+                </div>
+                <ul class="ingredients">
+                    <li ng-repeat="ingredient in step.ingredients">
+                        <i class="{{ingredient.type}}-icon"></i>
+                        <span class="quantity">
+                            <span>{{ingredient.qty.value}}</span>
+                            <span>{{ingredient.qty.unit.name}}</span>
+                        </span>
+                        <span>{{ingredient.name}}</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

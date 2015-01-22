@@ -137,12 +137,12 @@ angular.module('BrewItYourself').provider('unitsConversion', [
                         return '#' + toHex(r) + toHex(g) + toHex(b);
                     },
                     solve: function (rgb) {
-                        var color = rgb.match(/#(.{2})(.{2})(.{2})/);
+                        /*var color = rgb.match(/#(.{2})(.{2})(.{2})/);
                         if (color.length === 4) {
                             var r = parseInt(color[1], 16);
                             var g = parseInt(color[1], 16);
                             var b = parseInt(color[1], 16);
-                        }
+                        }*/
                         return 0;
                     }
                 }
