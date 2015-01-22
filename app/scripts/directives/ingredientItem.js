@@ -36,7 +36,7 @@ angular.module('BrewItYourself').directive('ingredientItem', ['$compile', functi
                 '<a href="#" editable-text="ingredientItem.name" title="Name" >{{ ingredientItem.name }}</a> ' +
                 '(EBC:<a href="#" editable-text="ingredientItem.color" title="EBC" onbeforesave="checkFloat($data)">{{ ingredientItem.color }}</a> - ' +
                 'yield: <a href="#" editable-text="ingredientItem.yield" title="Sugar extraction max yield" onbeforesave="checkFloat($data)">{{ ingredientItem.yield }}</a>%)' +
-                '<span class="ebc-sample" style="background: {{ebcToRgb(ingredientItem.color)}}" title="Malt color"></span>' +
+                '<span class="ebc-sample" style="background: {{loviToRgb(ingredientItem.color)}}" title="Malt color"></span>' +
                 '</span>';
                 break;
             case 'hop':
@@ -142,8 +142,8 @@ angular.module('BrewItYourself').directive('ingredientItem', ['$compile', functi
                 qty.value = parseFloat(qty.value);
             };
             
-            $scope.ebcToRgb = function(ebc) {
-                return unitsConversion.fromTo(ebc, 'color.ebc', 'rgb');
+            $scope.loviToRgb = function(ebc) {
+                return unitsConversion.fromTo(ebc, 'color.lovibond', 'rgb');
             };
         }],
         link: function (scope, element, attrs) {

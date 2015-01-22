@@ -91,6 +91,22 @@ angular.module('BrewItYourself').provider('brew', ['unitsConversionProvider',
             }
         };
         
+        var estimateSRM = function(grain, liquid) {
+            var mcu = 0;
+             if ('[object Array]' === Object.prototype.toString.call( grain )) {
+                for (var index in grain) {
+                    mcu += 8.34540445202 * grain[index].color * grain[index].mass / liquid;
+                }
+            } else {
+                 mcu += 8.34540445202 * grain.color * grain.mass / liquid;
+            }
+            var srm = 1.4922 * Math.pow(mcu, 0.6859);
+            return {
+                srm: srm,
+                color: unitsConversionProvider.fromTo(srm, 'color.srm', 'rgb')
+            };
+        };
+        
         var getIbu = function(alphaAcidity, massGr, volume, gravity, lasting) {
             var result = (alphaAcidity*massGr*10/volume) * (1.65 * Math.pow(1.25e-4, gravity-1)) * (1-Math.exp(-0.04*lasting))/4.15;
             return isNaN(result) ? 0 : result;
@@ -126,7 +142,8 @@ angular.module('BrewItYourself').provider('brew', ['unitsConversionProvider',
                     return gravity(sugar, liquidVol);
                 },
                 ibuEstimation:ibuEstimation,
-                getAlcohol: getAlcohol
+                getAlcohol: getAlcohol,
+                estimateSRM: estimateSRM
             };
         }];
     }]);

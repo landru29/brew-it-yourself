@@ -76,6 +76,13 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         return brew.getAlcohol($scope.getInitialGravity()) * 100;
     };
     
+    $scope.estimateSRM = function() {
+        var grain = recipe.getFermentableMass($scope.recipe);
+        var liquid = $scope.getFinalVolume();
+        var srm = brew.estimateSRM(grain, liquid);
+        return brew.estimateSRM(grain, liquid);
+    };
+    
     /*************************************************/
     /** MENU ACTIONS                                **/
     /*************************************************/
