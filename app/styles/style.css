@@ -107,7 +107,6 @@ span.reduce-button {
     width:24px;
     height:24px;
     cursor:pointer;
-    
 }
 
 span.reduce-button:hover {
@@ -120,7 +119,6 @@ span.expand-button {
     width:24px;
     height:24px;
     cursor:pointer;
-    
 }
 
 span.expand-button:hover {
@@ -279,4 +277,14 @@ span.drink {
 
 span.libelized {
     width: 150px;
+}
+
+span.physical-title {
+    display: block;
+    border-bottom:solid 1px #aaaaaa;
+}
+
+div.unit-convert {
+    padding-left: 20px;
+    padding-top: 5px;
 }

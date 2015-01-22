@@ -12,7 +12,7 @@ ul.step-list div.ingredients div {
 }
 
 ul.step-list div.ingredients div li.dummy {
-    width: 200px;
+    width: 223px;
     cursor:pointer;
     
     border: 1px #aaaaaa dashed;
@@ -165,3 +165,7 @@ ul.step-list li.ng-leave.ng-leave-active:not(.sorting) {
     max-height:0;
 }
 
+li.dummy.selecting-ingredient {
+    background: url('img/loader-h.gif') no-repeat 0px 5px;
+    height:30px;
+}

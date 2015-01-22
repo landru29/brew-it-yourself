@@ -3,6 +3,7 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
     "use strict";
     
     $scope.insertIngredient = function (step) {
+        step.$ingredientSelection = true;
         var modalInstance = $modal.open({
             templateUrl: 'views/modal-ingredient-pick.html',
             controller: 'ModalIngredientPickCtrl',
@@ -10,8 +11,9 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         });
         modalInstance.result.then(function (ingredient) {
             step.ingredients.push(ingredient);
+            delete step.$ingredientSelection;
         }, function () {
-            
+            delete step.$ingredientSelection;
         });
     };
     
@@ -40,7 +42,7 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
     };
     
     $scope.toggleStep = function(step) {
-        step.$reduced = !step.$reduced;
+        step.reduced = !step.reduced;
     };
     
     $scope.getRinsingWater = function() {

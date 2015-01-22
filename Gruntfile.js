@@ -277,10 +277,10 @@ module.exports = function (grunt) {
     grunt.registerTask('serve', [
         'clean:dev',
         'wiredep',
-        'express:dev',
-        'open:dev',
         'sass:dist',
         'copy:dev',
+        'express:dev',
+        'open:dev',
         'watch:dev'
     ]);
 

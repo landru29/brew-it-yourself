@@ -92,7 +92,8 @@ angular.module('BrewItYourself').provider('brew', ['unitsConversionProvider',
         };
         
         var getIbu = function(alphaAcidity, massGr, volume, gravity, lasting) {
-            return (alphaAcidity*massGr*10/volume) * (1.65 * Math.pow(1.25e-4, gravity-1)) * (1-Math.exp(-0.04*lasting))/4.15;
+            var result = (alphaAcidity*massGr*10/volume) * (1.65 * Math.pow(1.25e-4, gravity-1)) * (1-Math.exp(-0.04*lasting))/4.15;
+            return isNaN(result) ? 0 : result;
         };
         
         var getAlcohol = function(initialGravity, finalGravity) {

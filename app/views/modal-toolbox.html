@@ -2,6 +2,7 @@
     <h3 class="modal-title toolbox-icon">Toolbox</h3>
 </div>
 <div class="modal-body">
+<!-- **************************************************************************** --> 
     <accordion close-others="oneAtATime">
         <accordion-group is-open="accordeonStatus.isFirstOpen" is-disabled="accordeonStatus.isFirstDisabled">
             <accordion-heading>
@@ -28,14 +29,31 @@
                 </ul>
             </div>
         </accordion-group>
+<!-- **************************************************************************** -->        
         <accordion-group is-open="accordeonStatus.open">
             <accordion-heading>
             Unit convertion <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': accordeonStatus.open, 'glyphicon-chevron-right': !accordeonStatus.open}"></i>
             </accordion-heading>
-            Coming soon
+            <div ng-repeat="physical in convert.data">
+                <span class="physical-title">{{physical.name | ucfirst}}</span>
+                <div class="unit-convert">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="{{physical.name | ucfirst}}" aria-describedby="basic-addon2" ng-model="physical.from.value">
+                        <span class="input-group-addon" id="basic-addon2">
+                            <a href="#" editable-select="physical.from.unit" e-ng-options="s as s for s in convert.getPhysicalUnits(physical.name)"> {{ physical.from.unit }}</a>
+                        </span>
+                    </div>
+                    <div class="input-group">
+                        <span class="form-control">{{convert.fromTo(physical.from.value, physical.name + '.' + physical.from.unit, physical.to.unit)}}</span>
+                        <span class="input-group-addon" id="basic-addon2">
+                            <a href="#" editable-select="physical.to.unit" e-ng-options="s as s for s in convert.getPhysicalUnits(physical.name)"> {{ physical.to.unit }}</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
         </accordion-group>
     </accordion>
-        
+<!-- **************************************************************************** --> 
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" ng-click="close()">Close</button>

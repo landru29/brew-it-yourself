@@ -26,23 +26,39 @@ angular.module('BrewItYourself').directive('ingredientItem', ['$compile', functi
         return iconHtml;
     };
     
+    
+    
     var getCaption = function(ingredient) {
         var captionHtml='';
         switch (ingredient.type.toLowerCase()) {
             case 'fermentable':
-                captionHtml = '<span class="caption">' + ingredient.name + '</span>';
+                captionHtml = '<span class="caption">' +
+                '<a href="#" editable-text="ingredientItem.name" title="Name" >{{ ingredientItem.name }}</a> ' +
+                '(EBC:<a href="#" editable-text="ingredientItem.color" title="EBC" onbeforesave="checkFloat($data)">{{ ingredientItem.color }}</a> - ' +
+                'yield: <a href="#" editable-text="ingredientItem.yield" title="Sugar extraction max yield" onbeforesave="checkFloat($data)">{{ ingredientItem.yield }}</a>%)' +
+                '<span class="ebc-sample" style="background: {{ebcToRgb(ingredientItem.color)}}" title="Malt color"></span>' +
+                '</span>';
                 break;
             case 'hop':
-                captionHtml = '<span class="caption">' + ingredient.name + '</span>';
+                captionHtml = '<span class="caption">' +
+                '<a href="#" editable-text="ingredientItem.name" title="Name" >{{ ingredientItem.name }}</a> ' +
+                '(&alpha;: <a href="#" editable-text="ingredientItem.alpha" title="Alpha acidity" onbeforesave="checkFloat($data)">{{ ingredientItem.alpha }}</a>)' +
+                '</span>';
                 break;
             case 'misc':
-                captionHtml = '<span class="caption">' + ingredient.name + '</span>';
+                captionHtml = '<span class="caption">' +
+                '<a href="#" editable-text="ingredientItem.name" title="Name" >{{ ingredientItem.name }}</a>' +
+                '</span>';
                 break;
             case 'yeast':
-                captionHtml = '<span class="caption">' + ingredient.name + '</span>';
+                captionHtml = '<span class="caption">' +
+                '<a href="#" editable-text="ingredientItem.name" title="Name" >{{ ingredientItem.name }}</a>' +
+                '</span>';
                 break;
             case 'water':
-                captionHtml = '<span class="caption">' + ingredient.name + '</span>';
+                captionHtml = '<span class="caption">' +
+                '<a href="#" editable-text="ingredientItem.name" title="Name" >{{ ingredientItem.name }}</a>' +
+                '</span>';
                 break;
             default:
                 break;
@@ -115,7 +131,7 @@ angular.module('BrewItYourself').directive('ingredientItem', ['$compile', functi
         scope: {
             ingredientItem: '='
         },
-        controller: ['$scope', function($scope) {
+        controller: ['$scope', 'unitsConversion', function($scope, unitsConversion) {
             $scope.checkFloat = function(value) {
                 if (isNaN(parseFloat(value))) {
                     return 'Should be a number ("." is decimal separator)';
@@ -124,6 +140,10 @@ angular.module('BrewItYourself').directive('ingredientItem', ['$compile', functi
             
             $scope.forceFloat = function(qty) {
                 qty.value = parseFloat(qty.value);
+            };
+            
+            $scope.ebcToRgb = function(ebc) {
+                return unitsConversion.fromTo(ebc, 'color.ebc', 'rgb');
             };
         }],
         link: function (scope, element, attrs) {

@@ -91,12 +91,61 @@ angular.module('BrewItYourself').provider('unitsConversion', [
                     a1: 1
                 }),
                 fahrenheit: polynome({ // kelvin -> fahrenheit
-                    a0: -273.15,
-                    a1: 1
+                    a0: -459.67,
+                    a1: 9 / 5
                 }),
                 kelvin: polynome({ // kelvin -> kelvin
                     a1: 1
                 })
+            },
+            color: {
+                ebc: polynome({
+                    a1: 1
+                }),
+                srm: polynome({
+                    a1: 1 / 1.97
+                }),
+                lovibond: polynome({
+                    a0: 0.561051,
+                    a1: 0.374734
+                }),
+                mcu: {
+                    compute: function (ebc) {
+                        if (ebc / 1.97 >= 10) {
+                            return (ebc / 1.97 - (50 / 7)) * 3.5;
+                        } else {
+                            return 10 - Math.sqrt(100.0 - ebc * 5.0761421);
+                        }
+                    },
+                    solve: function (mcu) {
+                        if (mcu >= 10) {
+                            return 3.94 * (mcu + 25) / 7;
+                        } else {
+                            return (100 - Math.pow(10 - mcu, 2)) / 5.0761421;
+                        }
+                    }
+                },
+                rgb: {
+                    compute: function (ebc) {
+                        var toHex = function(i) {
+                            var s = '00' + i.toString(16);
+                            return s.substring(s.length-2);
+                        };
+                        var r = Math.round(Math.min(255, Math.max(0, 255 * Math.pow(0.975, ebc/1.97))));
+                        var g = Math.round(Math.min(255, Math.max(0, 245 * Math.pow(0.88, ebc/1.97))));
+                        var b = Math.round(Math.min(255, Math.max(0, 220 * Math.pow(0.7, ebc/1.97))));
+                        return '#' + toHex(r) + toHex(g) + toHex(b);
+                    },
+                    solve: function (rgb) {
+                        var color = rgb.match(/#(.{2})(.{2})(.{2})/);
+                        if (color.length === 4) {
+                            var r = parseInt(color[1], 16);
+                            var g = parseInt(color[1], 16);
+                            var b = parseInt(color[1], 16);
+                        }
+                        return 0;
+                    }
+                }
             },
             sugar: {
                 plato: polynome({ // sg -> plato
@@ -178,12 +227,12 @@ angular.module('BrewItYourself').provider('unitsConversion', [
                 }),
             }
         };
-        
-        var UnitException = function(origin, message) {
+
+        var UnitException = function (origin, message) {
             this.origin = origin;
             this.message = message;
         };
-        
+
         var fromTo = function (value, from, to, type) {
             var decodeFrom = from.match(/(([\w-]*)\.)?(.*)/);
             var decodeTo = to.match(/(([\w-]*)\.)?(.*)/);
@@ -223,14 +272,21 @@ angular.module('BrewItYourself').provider('unitsConversion', [
             }
             conversionObject[type][thisUnit] = polynome(polynomeCoef);
         };
-        
+
         this.fromTo = fromTo;
 
         this.$get = [
 
             function () {
                 return {
-                    fromTo: fromTo
+                    fromTo: fromTo,
+                    getPhysicalType: function() {
+                        return Object.keys(conversionObject);
+                    },
+                    getPhysicalUnits: function(physicalType) {
+                        return Object.keys(conversionObject[physicalType]);
+                    }
+                        
                 };
         }];
             }]);

@@ -108,5 +108,31 @@ angular.module('BrewItYourself').controller('ModalToolboxCtrl', ['$scope', '$fil
             // Compute alcohol
             $scope.gravity.computeAlcohol(newVal);
         }, true);
+        
+        $scope.convert = {
+            data: {},
+            fromTo: function (value, unitFrom, unitTo) {
+                return unitsConversion.fromTo(value, unitFrom, unitTo);
+            },
+            getPhysicalUnits: function (physicalType) {
+                return unitsConversion.getPhysicalUnits(physicalType);
+            }
+        };
+        
+        var physicals = unitsConversion.getPhysicalType ();
+        for (var i in physicals) {
+            var units = unitsConversion.getPhysicalUnits (physicals[i]);
+            $scope.convert.data[physicals[i]] = {
+                name: physicals[i],
+                from: {
+                    value: null,
+                    unit: units[0]
+                },
+                to: {
+                    value: null,
+                    unit: units[0]
+                }
+            };
+        }
 
     }]);

@@ -54,3 +54,11 @@ ul.ingredient-item-list li.ingredient-item.ng-leave {
 ul.ingredient-item-list li.ingredient-item.ng-leave {
     @include animation-name(rollOut);
 }
+
+span.ebc-sample {
+    display:inline-block;
+    width:20px;
+    height:20px;
+    border: solid 1px #efefef;
+    margin-left: 5px;
+}
