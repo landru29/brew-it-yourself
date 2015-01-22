@@ -1,0 +1,7 @@
+{
+    "fermentable":"Fermentables",
+    "hop":"Hops",
+    "misc":"Miscellaneous",
+    "water": "Water",
+    "yeast": "Yeasts"
+}

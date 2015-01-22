@@ -1,6 +1,6 @@
 <div class="editor" ng-hide="printing">
     <div class="section">
-        <div class="subsection">Recipe</div>
+        <div class="subsection">{{'Recipe' | translate}}</div>
         <div class="recipe-header">
             <!--<span class="save-button" ng-click="save()" title="Save this recipe"></span>
             <span class="open-file-button" ng-click="open()" title="Open recipe"></span>
@@ -8,55 +8,55 @@
             <span class="clone-button" ng-click="cloneRecipe()" title="Clone recipe"></span>
             <span class="delete-button" ng-click="deleteRecipe()" title="Delete recipe"></span>-->
             <ul>
-                <li>Name: <a href="#" editable-text="recipe.name">{{ recipe.name || "No name" }}</a></li>
-                <li>Author: <a href="#" editable-text="recipe.author">{{ recipe.author || "No name" }}</a></li>
-                <li>Date: <a href="#" editable-date="recipe.date">{{ recipe.date | date : "dd/MM/yyyy" }}</a></li>
+                <li>{{'Name' | translate }}: <a href="#" editable-text="recipe.name">{{ recipe.name || "No name" }}</a></li>
+                <li>{{'Author' | translate }}: <a href="#" editable-text="recipe.author">{{ recipe.author || "No name" }}</a></li>
+                <li>{{'Date' | translate }}: <a href="#" editable-date="recipe.date">{{ recipe.date | date : "dd/MM/yyyy" }}</a></li>
             </ul>
-            <span class="computed">Computed:</span>
+            <span class="computed">{{'Computed' | translate}}:</span>
             <ul>
-                <li><span class="water libelized">Mashing volume:</span><span class="badge">{{getMashingVolume() | number:1}} L</span></li>
-                <li><span class="water libelized">Rinsing volume:</span><span class="badge">{{getRinsingWater() | number:1}} L</span></li>
-                <li><span class="water libelized">Final volume:</span><span class="badge">{{getFinalVolume()  | number:1}} L</span></li>
-                <li><span class="gravity libelized">Initial gravity:</span><span class="badge">{{getInitialGravity() | number:3}}</span></li>
-                <li><span class="hops libelized">IBU:</span><span class="badge">{{getIbu() | number:0}}</span></li>
-                <li><span class="drink libelized">Alcohol:</span><span class="badge">{{getAlcohol() | number:1}} %Vol</span></li>
-                <li><span class="drink libelized">Color (srm):</span><span class="beer-color" style="background: {{estimateSRM().color}}" title="Beer color">{{estimateSRM().srm | number:1}}</span></li>
+                <li><span class="water libelized">{{'Mashing volume' | translate}}:</span><span class="badge">{{getMashingVolume() | number:1}} L</span></li>
+                <li><span class="water libelized">{{'Rinsing volume' | translate}}:</span><span class="badge">{{getRinsingWater() | number:1}} L</span></li>
+                <li><span class="water libelized">{{'Final volume' | translate}}:</span><span class="badge">{{getFinalVolume()  | number:1}} L</span></li>
+                <li><span class="gravity libelized">{{'Initial gravity' | translate}}:</span><span class="badge">{{getInitialGravity() | number:3}}</span></li>
+                <li><span class="hops libelized">{{'IBU' | translate}}:</span><span class="badge">{{getIbu() | number:0}}</span></li>
+                <li><span class="drink libelized">{{'Alcohol' | translate}}:</span><span class="badge">{{getAlcohol() | number:1}} %Vol</span></li>
+                <li><span class="drink libelized">{{'Color' | translate}} (srm):</span><span class="beer-color" style="background: {{estimateSRM().color}}" title="{{'Beer color' | translate}}">{{estimateSRM().srm | number:1}}</span></li>
             </ul>
         </div>
     </div>
     <div class="section">
-        <div class="subsection">Steps</div>
+        <div class="subsection">{{'Steps' | translate}}</div>
         <div class="step-list">
             <ul class="step-list" as-sortable="stepSortOptions" ng-model="recipe.steps">
                 <li ng-repeat="step in recipe.steps" as-sortable-item ng-class="{sorting: step['$moving']}">
                     <div class="step" as-sortable-item-handle>
                         <div class="title" >
-                            <a href="#" editable-text="step.name" title="name">{{ step.name || "No name" }}</a>
-                            <span class="close-button" ng-click="deleteStep(step)"></span>
-                            <span ng-class="{'reduce-button':!(step.$reduced), 'expand-button':step.reduced}" ng-click="toggleStep(step)"></span>
+                            <a href="#" editable-text="step.name" title="{{'Name' | translate}}">{{ step.name || "No name" }}</a>
+                            <span class="close-button" ng-click="deleteStep(step)" title="{{'Delete' | translate}}"></span>
+                            <span ng-class="{'reduce-button':!(step.$reduced), 'expand-button':step.reduced}" ng-click="toggleStep(step)" title="{{'Reduce' | translate}}"></span>
                         </div>
                         <div class="detail" ng-hide="step.reduced">
                             <div class="lasting">
-                                <label>Lasting:</label> 
-                                <a href="#" editable-number="step.lasting.days" title="days">{{ step.lasting.days }} days</a>
+                                <label>{{'Lasting' | translate}}:</label> 
+                                <a href="#" editable-number="step.lasting.days" title="{{'Days' | translate}}">{{ step.lasting.days }} {{ 'day(s)' | translate }}</a>
                                 -
-                                <a href="#" editable-number="step.lasting.hours" title="time">{{ step.lasting.hours }} hours</a>
+                                <a href="#" editable-number="step.lasting.hours" title="{{'Hours' | translate}}">{{ step.lasting.hours }} {{ 'hour(s)' | translate }}</a>
                                 -
-                                <a href="#" editable-number="step.lasting.minutes" title="time">{{ step.lasting.minutes }} minutes</a>
+                                <a href="#" editable-number="step.lasting.minutes" title="{{'Minutes' | translate}}">{{ step.lasting.minutes }} {{ 'minute(s)' | translate }}</a>
                             </div>
                             <div class="temperature">
-                                <label>temperature:</label>
-                                <a href="#" editable-number="step.temperature" title="temperature">{{ step.temperature }} °C</a>
+                                <label>{{'Temperature' | translate}}:</label>
+                                <a href="#" editable-number="step.temperature" title="{{'Temperature' | translate}}">{{ step.temperature }} °C</a>
                             </div>
                             <div class="ingredients">
-                                <label>Ingredients:</label>
+                                <label>{{'Ingredients' | translate}}:</label>
                                 <div>
                                     <ul class="ingredient-item-list">
                                         <li ng-repeat="ingredient in step.ingredients" class="ingredient-item">
                                             <span ingredient-item="ingredient"></span>
-                                            <span class="suppr-button" ng-click="deleteIngredient(step, ingredient)" title="Delete">
+                                            <span class="suppr-button" ng-click="deleteIngredient(step, ingredient)" title="{{'Delete' | translate}}">
                                         </li>
-                                        <li class="dummy" ng-class="{'selecting-ingredient': step.$ingredientSelection}" ng-click="insertIngredient(step)">{{step.$ingredientSelection ? "" : "New ingredient"}}</li>
+                                        <li class="dummy" ng-class="{'selecting-ingredient': step.$ingredientSelection}" ng-click="insertIngredient(step)">{{step.$ingredientSelection ? "" : ("New ingredient" | translate)}}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
             </ul>
 
             <div class="dummy-step" ng-click="pushStep()">
-                New Step
+                {{'New step' | translate}}
             </div>
         </div>
     </div>
@@ -92,7 +92,7 @@
                     <span class="temperature">{{step.temperature | number:0}} °c</span>
                     <span class="time">
                         <i class="glyphicon glyphicon-time"></i>
-                        <span ng-show="step.lasting.days"><ng-pluralize count="step.lasting.days" when="{'0': '', 'one': '1 day', 'other': '{} days'}"></ng-pluralize></span>
+                        <span ng-show="step.lasting.days">{{step.lasting.days}} {{'day(s)' | translate}}</span>
                         <span ng-show="step.lasting.hours || step.lasting.minutes">{{step.lasting.hours | leadingzero:2}}:{{step.lasting.minutes | leadingzero:2}}</span>
                     </span>
                 </div>

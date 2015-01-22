@@ -30,23 +30,31 @@
         <!-- endbuild -->
         
     </head>
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none;
+        }
+    </style>
     <body>
         <div class="app-frame">
-            <div class="main-frame" ng-app="BrewItYourself">
+            <div class="main-frame" ng-app="BrewItYourself" class="ng-cloak">
                 <div class="main-title">Brew it yourself</div>
                 <div class="main-menu" ng-controller="MenuCtrl">
+                    <div class="lang">
+                        <span class="en clickable" ng-click="changeLang('en')"></span><span class="fr clickable" ng-click="changeLang('fr')"></span>
+                    </div>
                     <ul ng-hide="printing">
-                        <li class="toolbox-icon" ng-click="triggerAction('tools')">Tools</li>
-                        <li class="trash-icon" ng-click="triggerAction('trash')">Trash</li>
-                        <li class="clone-icon" ng-click="triggerAction('clone')">Clone</li>
-                        <li class="new-icon" ng-click="triggerAction('new')">New</li>
-                        <li class="open-icon" ng-click="triggerAction('open')">Open</li>
-                        <li class="save-icon" ng-click="triggerAction('save')">Save</li>
-                        <li class="export-icon" ng-click="triggerAction('export')">Export</li>
-                        <li class="print-icon" ng-click="togglePrint()">Print</li>
+                        <li class="toolbox-icon" ng-click="triggerAction('tools')">{{'Tools' | translate}}</li>
+                        <li class="trash-icon" ng-click="triggerAction('trash')">{{'Trash' | translate}}</li>
+                        <li class="clone-icon" ng-click="triggerAction('clone')">{{'Clone' | translate}}</li>
+                        <li class="new-icon" ng-click="triggerAction('new')">{{'New' | translate}}</li>
+                        <li class="open-icon" ng-click="triggerAction('open')">{{'Open' | translate}}</li>
+                        <li class="save-icon" ng-click="triggerAction('save')">{{'Save' | translate}}</li>
+                        <li class="export-icon" ng-click="triggerAction('export')">{{'Export' | translate}}</li>
+                        <li class="print-icon" ng-click="togglePrint()">{{'Print' | translate}}</li>
                     </ul>
                     <ul ng-show="printing">
-                        <li class="edit-icon" ng-click="togglePrint()">Edition</li>
+                        <li class="edit-icon" ng-click="togglePrint()">{{'Edition' | translate}}</li>
                     </ul>
                 </div>
                 <div class="messages" ng-controller="MessageCtrl">
@@ -71,6 +79,9 @@
     <script src="bower_components/ngstorage/ngStorage.js"></script>
     <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
     <script src="bower_components/ng-sortable/dist/ng-sortable.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-translate-loader-url/angular-translate-loader-url.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     

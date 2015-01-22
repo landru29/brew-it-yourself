@@ -33,31 +33,31 @@ angular.module('BrewItYourself').directive('ingredientItem', ['$compile', functi
         switch (ingredient.type.toLowerCase()) {
             case 'fermentable':
                 captionHtml = '<span class="caption">' +
-                '<a href="#" editable-text="ingredientItem.name" title="Name" >{{ ingredientItem.name }}</a> ' +
+                '<a href="#" editable-text="ingredientItem.name" title="{{\'Name\' | translate}}" >{{ ingredientItem.name }}</a> ' +
                 '(EBC:<a href="#" editable-text="ingredientItem.color" title="EBC" onbeforesave="checkFloat($data)">{{ ingredientItem.color }}</a> - ' +
-                'yield: <a href="#" editable-text="ingredientItem.yield" title="Sugar extraction max yield" onbeforesave="checkFloat($data)">{{ ingredientItem.yield }}</a>%)' +
-                '<span class="ebc-sample" style="background: {{loviToRgb(ingredientItem.color)}}" title="Malt color"></span>' +
+                '{{\'yield\' | translate}}: <a href="#" editable-text="ingredientItem.yield" title="{{\'Sugar extraction max yield\' | translate}}" onbeforesave="checkFloat($data)">{{ ingredientItem.yield }}</a>%)' +
+                '<span class="ebc-sample" style="background: {{loviToRgb(ingredientItem.color)}}" title="{{\'Malt color\' | translate}}"></span>' +
                 '</span>';
                 break;
             case 'hop':
                 captionHtml = '<span class="caption">' +
-                '<a href="#" editable-text="ingredientItem.name" title="Name" >{{ ingredientItem.name }}</a> ' +
-                '(&alpha;: <a href="#" editable-text="ingredientItem.alpha" title="Alpha acidity" onbeforesave="checkFloat($data)">{{ ingredientItem.alpha }}</a>)' +
+                '<a href="#" editable-text="ingredientItem.name" title="{{\'Name\' | translate}}" >{{ ingredientItem.name }}</a> ' +
+                '(&alpha;: <a href="#" editable-text="ingredientItem.alpha" title="{{\'Alpha acidity\' | translate}}" onbeforesave="checkFloat($data)">{{ ingredientItem.alpha }}</a>)' +
                 '</span>';
                 break;
             case 'misc':
                 captionHtml = '<span class="caption">' +
-                '<a href="#" editable-text="ingredientItem.name" title="Name" >{{ ingredientItem.name }}</a>' +
+                '<a href="#" editable-text="ingredientItem.name" title="{{\'Name\' | translate}}" >{{ ingredientItem.name }}</a>' +
                 '</span>';
                 break;
             case 'yeast':
                 captionHtml = '<span class="caption">' +
-                '<a href="#" editable-text="ingredientItem.name" title="Name" >{{ ingredientItem.name }}</a>' +
+                '<a href="#" editable-text="ingredientItem.name" title="{{\'Name\' | translate}}" >{{ ingredientItem.name }}</a>' +
                 '</span>';
                 break;
             case 'water':
                 captionHtml = '<span class="caption">' +
-                '<a href="#" editable-text="ingredientItem.name" title="Name" >{{ ingredientItem.name }}</a>' +
+                '<a href="#" editable-text="ingredientItem.name" title="{{\'Name\' | translate}}" >{{ ingredientItem.name }}</a>' +
                 '</span>';
                 break;
             default:
@@ -77,7 +77,7 @@ angular.module('BrewItYourself').directive('ingredientItem', ['$compile', functi
                         type: 'mass.kg'
                     }
                 }, ingredient.qty);
-                qtyHtml = '<a href="#" editable-text="ingredientItem.qty.value" title="Quantity" onbeforesave="checkFloat($data)" onaftersave="forceFloat(ingredientItem.qty)">{{ ingredientItem.qty.value }} {{ingredientItem.qty.unit.name}}</a>';
+                qtyHtml = '<a href="#" editable-text="ingredientItem.qty.value" title="{{\'Quantity\' | translate}}" onbeforesave="checkFloat($data)" onaftersave="forceFloat(ingredientItem.qty)">{{ ingredientItem.qty.value }} {{ingredientItem.qty.unit.name}}</a>';
                 break;
             case 'hop':
                 ingredient.qty = angular.extend({
@@ -87,7 +87,7 @@ angular.module('BrewItYourself').directive('ingredientItem', ['$compile', functi
                         type: 'mass.g'
                     }
                 }, ingredient.qty);
-                qtyHtml = '<a href="#" editable-text="ingredientItem.qty.value" title="Quantity" onbeforesave="checkFloat($data)" onaftersave="forceFloat(ingredientItem.qty)">{{ ingredientItem.qty.value }} {{ingredientItem.qty.unit.name}}</a>';
+                qtyHtml = '<a href="#" editable-text="ingredientItem.qty.value" title="{{\'Quantity\' | translate}}" onbeforesave="checkFloat($data)" onaftersave="forceFloat(ingredientItem.qty)">{{ ingredientItem.qty.value }} {{ingredientItem.qty.unit.name}}</a>';
                 break;
             case 'misc':
                 ingredient.qty = angular.extend({
@@ -97,7 +97,7 @@ angular.module('BrewItYourself').directive('ingredientItem', ['$compile', functi
                         type: 'mass.g'
                     }
                 }, ingredient.qty);
-                qtyHtml = '<a href="#" editable-text="ingredientItem.qty.value" title="Quantity" onbeforesave="checkFloat($data)" onaftersave="forceFloat(ingredientItem.qty)">{{ ingredientItem.qty.value }} {{ingredientItem.qty.unit.name}}</a>';
+                qtyHtml = '<a href="#" editable-text="ingredientItem.qty.value" title="{{\'Quantity\' | translate}}" onbeforesave="checkFloat($data)" onaftersave="forceFloat(ingredientItem.qty)">{{ ingredientItem.qty.value }} {{ingredientItem.qty.unit.name}}</a>';
                 break;
             case 'yeast':
                 ingredient.qty = angular.extend({
@@ -107,7 +107,7 @@ angular.module('BrewItYourself').directive('ingredientItem', ['$compile', functi
                         type: 'mass.g'
                     }
                 }, ingredient.qty);
-                qtyHtml = '<a href="#" editable-text="ingredientItem.qty.value" title="Quantity" onbeforesave="checkFloat($data)" onaftersave="forceFloat(ingredientItem.qty)">{{ ingredientItem.qty.value }} {{ingredientItem.qty.unit.name}}</a>';
+                qtyHtml = '<a href="#" editable-text="ingredientItem.qty.value" title="{{\'Quantity\' | translate}}" onbeforesave="checkFloat($data)" onaftersave="forceFloat(ingredientItem.qty)">{{ ingredientItem.qty.value }} {{ingredientItem.qty.unit.name}}</a>';
                 break;
             case 'water':
                 ingredient.qty = angular.extend({
@@ -117,7 +117,7 @@ angular.module('BrewItYourself').directive('ingredientItem', ['$compile', functi
                         type: 'volume.l'
                     }
                 }, ingredient.qty);
-                qtyHtml = '<a href="#" editable-text="ingredientItem.qty.value" title="Quantity" onbeforesave="checkFloat($data)" onaftersave="forceFloat(ingredientItem.qty)">{{ ingredientItem.qty.value }} {{ingredientItem.qty.unit.name}}</a>';
+                qtyHtml = '<a href="#" editable-text="ingredientItem.qty.value" title="{{\'Quantity\' | translate}}" onbeforesave="checkFloat($data)" onaftersave="forceFloat(ingredientItem.qty)">{{ ingredientItem.qty.value }} {{ingredientItem.qty.unit.name}}</a>';
                 break;
             default:
                 break;

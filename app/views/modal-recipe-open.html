@@ -1,11 +1,11 @@
 <div class="modal-header">
-    <h3 class="modal-title open-icon">Open a recipe</h3>
+    <h3 class="modal-title open-icon">{{'Open a recipe' | translate}}</h3>
 </div>
 <div class="modal-body">
     <accordion close-others="oneAtATime">
         <accordion-group is-open="accordeonStatus.isFirstOpen" is-disabled="accordeonStatus.isFirstDisabled">
             <accordion-heading>
-            Local storage <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': accordeonStatus.open, 'glyphicon-chevron-right': !accordeonStatus.open}"></i>
+                {{'Local storage' | translate}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': accordeonStatus.open, 'glyphicon-chevron-right': !accordeonStatus.open}"></i>
             </accordion-heading>
     
             <ul class="file-list">
@@ -15,15 +15,15 @@
         </accordion-group>
         <accordion-group is-open="accordeonStatus.open">
             <accordion-heading>
-            Import <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': accordeonStatus.open, 'glyphicon-chevron-right': !accordeonStatus.open}"></i>
+                {{'Import' | translate}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': accordeonStatus.open, 'glyphicon-chevron-right': !accordeonStatus.open}"></i>
             </accordion-heading>
-            <p>Copy-paste this content in a new file and save it on your local disk: </p>
+            <p>{{'Copy-paste from a preview export' | translate}}: </p>
             <textarea rows="7" cols="80" class="export" ng-model="json.recipe"></textarea>
-            <button class="btn btn-primary" ng-click="import()">import</button
+            <button class="btn btn-primary" ng-click="import()">{{'Import' | translate}}</button
         </accordion-group>
     </accordion>
     
 </div>
 <div class="modal-footer">
-    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-warning" ng-click="cancel()">{{'Cancel' | translate}}</button>
 </div>

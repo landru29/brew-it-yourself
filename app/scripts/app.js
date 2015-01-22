@@ -6,10 +6,11 @@ angular.module('BrewItYourself', [
     'ui.sortable',
     'ngStorage',
     'ui.bootstrap',
+    'pascalprecht.translate',
     'ngAnimate'
 ]);
 
-angular.module('BrewItYourself').config(['$routeProvider', function ($routeProvider) {
+angular.module('BrewItYourself').config(['$routeProvider', '$translateProvider', function ($routeProvider, $translateProvider) {
     'use strict';
     $routeProvider.when('/', {
         templateUrl: 'views/editor.html',
@@ -17,6 +18,13 @@ angular.module('BrewItYourself').config(['$routeProvider', function ($routeProvi
     }).otherwise({
         redirectTo: '/'
     });
+    
+    $translateProvider.useStaticFilesLoader({
+      prefix: '/data/',
+      suffix: '.json'
+    });
+    
+    $translateProvider.preferredLanguage('en');
 }]);
 
 angular.module('BrewItYourself').run(['editableOptions', 'ingredient', function (editableOptions, ingredient) {

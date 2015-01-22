@@ -89,3 +89,30 @@ div.main-frame {
     display:inline-block;
     margin: 20px 0px 0px 0px;
 }
+
+span.en {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url("img/icon-english.png") no-repeat;
+}
+
+span.en:hover {
+    background-position: 100%;
+}
+
+span.fr {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url("img/icon-french.png") no-repeat;
+}
+
+span.fr:hover {
+    background-position: 100%;
+}
+
+div.lang {
+    position: absolute;
+    top: 120px;
+}
