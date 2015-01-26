@@ -54,6 +54,13 @@
     "yield": "taux",
     "day(s)": "jour(s)",
     "hour(s)": "heure(s)",
-    "minute(s)": "minute(s)"
+    "minute(s)": "minute(s)",
+    "Edit the name, author and date of your recipe": "Editer le nom, l'auteur et la date de votre recette",
+    "Click to add a new step":"Cliquer pour ajouter une nouvelle étape",
+    "Click and add malt":"Cliquer pour ajouter du malt",
+    "Specify the quantity": "Préciser la quantité",
+    "Now, you are able to edit a complete recipe. Have fun !":"Maintenant vous êtes capable d'éditer une recette. Amusez-vous bien !",
+    "Specify the lasting and the temperature of the step":"Préciser la durée et la température du palier",
+    "Welcome to Brew It Yourself ! I will, now, teach you the basics.":"Bienvenue dans Brew It Yourself ! Je vais, maintenant, vous apprendre les bases."
 }
 

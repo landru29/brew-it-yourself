@@ -1,0 +1,85 @@
+@import "compass/css3";
+
+div.tutorial {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+div.tutorial.layer {
+    @include opacity(0.1);
+    z-index: 50;
+    background-color: green;
+}
+
+div.tutorial div.main {
+    display: inline-block;
+    width:750px;
+    z-index: 60;
+    @include opacity(1);
+    text-align: left;
+}
+
+div.tutorial div.main .bulle {
+    height: 244px;
+    line-height: 144px;
+    width: 330px;
+    display: inline-block;
+    background: url('img/slide1.png') no-repeat;
+    padding: 60px 25px 25px 40px;
+    color: #0072ff;
+    font-family:cursive;
+    font-weight: bold;
+    font-size:20px;
+}
+
+div.tutorial div.main .bulle span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;      
+}
+
+div.tutorial div.main .slide1 {
+    margin-top: 280px;
+    margin-left: 110px;
+}
+
+div.tutorial div.main .slide2 {
+    margin-top: 300px;
+    margin-left: 460px;
+}
+
+div.tutorial div.main .slide3 {
+    margin-top: 390px;
+    margin-left: 460px;
+}
+
+div.tutorial div.main .slide4 {
+    margin-top: 390px;
+    margin-left: 445px;
+}
+
+div.tutorial div.main .slide5 {
+    margin-top: 315px;
+    margin-left: 490px;
+}
+
+div.tutorial div.main .slide-landru {
+    margin-top: 120px;
+    margin-left: 60px;
+}
+
+div.tutorial div.main .landru {
+    height: 348px;
+    width: 500px;
+    display: inline-block;
+    background: url('img/landru.png') no-repeat;
+    padding: 150px 35px 25px 242px;
+    color: #0072ff;
+    font-family:cursive;
+    font-weight: bold;
+    font-size:20px;
+}
