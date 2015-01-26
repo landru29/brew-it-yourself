@@ -37,13 +37,13 @@
     </style>
     <body>
         <div class="app-frame">
-            <div class="main-frame" ng-app="BrewItYourself" class="ng-cloak">
+            <div class="main-frame" ng-app="BrewItYourself">
                 <div class="main-title">Brew it yourself</div>
                 <div class="main-menu" ng-controller="MenuCtrl">
                     <div class="lang">
                         <span class="en clickable" ng-click="changeLang('en')"></span><span class="fr clickable" ng-click="changeLang('fr')"></span>
                     </div>
-                    <ul ng-hide="printing">
+                    <ul ng-hide="printing" class="ng-cloak">
                         <li class="toolbox-icon" ng-click="triggerAction('tools')">{{'Tools' | translate}}</li>
                         <li class="trash-icon" ng-click="triggerAction('trash')">{{'Trash' | translate}}</li>
                         <li class="clone-icon" ng-click="triggerAction('clone')">{{'Clone' | translate}}</li>
@@ -53,12 +53,12 @@
                         <li class="export-icon" ng-click="triggerAction('export')">{{'Export' | translate}}</li>
                         <li class="print-icon" ng-click="togglePrint()">{{'Print' | translate}}</li>
                     </ul>
-                    <ul ng-show="printing">
+                    <ul ng-show="printing" class="ng-cloak">
                         <li class="edit-icon" ng-click="togglePrint()">{{'Edition' | translate}}</li>
                     </ul>
                 </div>
                 <div class="messages" ng-controller="MessageCtrl">
-                    <div ng-repeat="msg in messages" class="alert alert-{{msg.type}} animated clickable" role="alert" ng-click="destroy(msg.uid)">{{msg.message}}</div>
+                    <div ng-repeat="msg in messages" class="alert alert-{{msg.type}} animated clickable" role="alert" ng-click="destroy(msg.uid)" class="ng-cloak">{{msg.message}}</div>
                 </div>
                 <div class="view-container" ng-view="">
                 </div>
