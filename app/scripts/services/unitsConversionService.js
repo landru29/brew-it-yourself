@@ -233,7 +233,7 @@ angular.module('BrewItYourself').provider('unitsConversion', [
             this.message = message;
         };
 
-        var fromTo = function (value, from, to, type) {
+        var fromTo = function (value, from, to, options) {
             var decodeFrom = from.match(/(([\w-]*)\.)?(.*)/);
             var decodeTo = to.match(/(([\w-]*)\.)?(.*)/);
             var unitTo = decodeTo[3];
@@ -241,9 +241,9 @@ angular.module('BrewItYourself').provider('unitsConversion', [
             if ('string' === typeof value) {
                 value = parseFloat(value);
             }
-            if (!type) {
-                type = decodeFrom[2];
-            }
+            
+            var type = ((options) && (options.type)) ? options.type : decodeFrom[2];
+            var precision = ((options) && (options.precision)) ? options.precision : null;
 
             if (!conversionObject[type]) {
                 throw new UnitException('from', 'Type ' + type + ' does not exist in the unit conversion system');
@@ -258,7 +258,13 @@ angular.module('BrewItYourself').provider('unitsConversion', [
             if ('number' !== typeof SiValue) {
                 throw new UnitException('from', 'Value ' + value + ' is out of bounce in unit ' + unitFrom + ', type ' + type);
             }
-            return conversionObject[type][unitTo].compute(SiValue);
+            var result = conversionObject[type][unitTo].compute(SiValue);
+            if (precision) {
+                var dec = Math.pow(10, precision);
+                return Math.round(result*dec) / dec;
+            } else {
+                return result;
+            }
         };
 
         this.registerConversion = function (polynomeCoef, unit, type) {

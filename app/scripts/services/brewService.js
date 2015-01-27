@@ -132,15 +132,16 @@ angular.module('BrewItYourself').provider('brew', ['unitsConversionProvider',
         getIbu = ibuMethods.tinseth;
         
         var ibuEstimation = function (hops, gravity, volume) {
+            var alphaAcidity;
             if ('[object Array]' === Object.prototype.toString.call(hops)) {
                 var result = 0;
                 for (var index in hops) {
-                    var alphaAcidity = ((hops[index].type) && (hops[index].type === 'pellets') ? 1.1 * hops[index].alpha / 100 : hops[index].alpha / 100);
+                    alphaAcidity = ((hops[index].type) && (hops[index].type === 'pellets') ? 1.1 * hops[index].alpha / 100 : hops[index].alpha / 100);
                     result += getIbu(alphaAcidity, hops[index].mass, volume, gravity, hops[index].lasting);
                 }
                 return result;
             } else {
-                var alphaAcidity = ((hops.type) && (hops.type === 'pellets') ? 1.1 * hops.alpha / 100 : hops.alpha / 100);
+                alphaAcidity = ((hops.type) && (hops.type === 'pellets') ? 1.1 * hops.alpha / 100 : hops.alpha / 100);
                 return (hops.mass ? getIbu(alphaAcidity, hops.mass, volume, gravity, hops.lasting) : 0);
             }
         };

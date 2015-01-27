@@ -78,6 +78,17 @@ module.exports = function (grunt) {
         },
 
         /*************************************************/
+        /** TEST                                        **/
+        /*************************************************/
+
+        karma: {
+            unit: {
+                configFile: 'test/karma.conf.js',
+                singleRun: true
+            }
+        },
+
+        /*************************************************/
         /** TASK USED BUILDING                          **/
         /*************************************************/
 
@@ -163,7 +174,7 @@ module.exports = function (grunt) {
         },
 
         sass: { // compile SCSS files into css files
-            options: { // i've also tested including the compass option here, but results in the same error. 
+            options: {
                 /*includePaths: [
                     'bower_components'
                 ]*/
@@ -299,10 +310,12 @@ module.exports = function (grunt) {
 
     grunt.registerTask('check', [
         'wiredep',
-        'jshint:dev'
+        'jshint:dev',
+        'karma:unit'
     ]);
 
     grunt.registerTask('prod', [
+        'karma:unit',
         'clean:dist',
         'wiredep',
         'copy:html',

@@ -1,4 +1,4 @@
-{
+var recipeFixture = {
     "name": "Brew it !",
     "date": "2015-01-20T12:16:40.281Z",
     "author": "Landru",
@@ -145,4 +145,4 @@
         }],
         "reduced": false
     }]
-}
+};
