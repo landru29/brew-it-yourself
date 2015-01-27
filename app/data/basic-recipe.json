@@ -128,7 +128,21 @@
             "days": 30
         },
         "temperature": 12,
-        "ingredients": [],
+        "ingredients": [{
+            "name": "Belgian Abbey",
+            "form": "Liquid",
+            "laboratory": "Wyeast",
+            "productId": "1214",
+            "attenuation": "76",
+            "type": "yeast",
+            "qty": {
+                "value": 15,
+                "unit": {
+                    "name": "g",
+                    "type": "mass.g"
+                }
+            }
+        }],
         "reduced": false
     }]
 }

@@ -78,13 +78,13 @@
     <div class="recipe">
         <div class="container">
             <ul class="features">
-                <li><span class="water libelized">Mashing volume:</span><span >{{getMashingVolume() | number:1}} L</span></li>
-                <li><span class="water libelized">Rinsing volume:</span><span >{{getRinsingWater() | number:1}} L</span></li>
-                <li><span class="water libelized">Final volume:</span><span >{{getFinalVolume()  | number:1}} L</span></li>
-                <li><span class="gravity libelized">Initial gravity:</span><span >{{getInitialGravity() | number:3}}</span></li>
-                <li><span class="hops libelized">IBU:</span><span >{{getIbu() | number:0}}</span></li>
-                <li><span class="drink libelized">Alcohol:</span><span >{{getAlcohol() | number:1}} %Vol</span></li>
-                <li><span class="drink libelized">Color (srm):</span><span class="beer-color" style="background: {{estimateSRM().color}}" title="Beer color">{{estimateSRM().srm | number:1}}</span></li>
+                <li><span class="water libelized">{{'Mashing volume' | translate}}:</span><span >{{getMashingVolume() | number:1}} L</span></li>
+                <li><span class="water libelized">{{'Rinsing volume' | translate}}:</span><span >{{getRinsingWater() | number:1}} L</span></li>
+                <li><span class="water libelized">{{'Final volume' | translate}}:</span><span >{{getFinalVolume()  | number:1}} L</span></li>
+                <li><span class="gravity libelized">{{'Initial gravity' | translate}}:</span><span >{{getInitialGravity() | number:3}}</span></li>
+                <li><span class="hops libelized">{{'IBU' | translate}}:</span><span >{{getIbu() | number:0}}</span></li>
+                <li><span class="drink libelized">{{'Alcohol' | translate}}:</span><span >{{getAlcohol() | number:1}} %Vol</span></li>
+                <li><span class="drink libelized">{{'Color' | translate}} (srm):</span><span class="beer-color" style="background: {{estimateSRM().color}}" title="Beer color">{{estimateSRM().srm | number:1}}</span></li>
             </ul>
             <div class="step" ng-repeat="step in recipe.steps">
                 <div class="title">
