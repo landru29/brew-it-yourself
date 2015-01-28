@@ -259,7 +259,7 @@ angular.module('BrewItYourself').provider('unitsConversion', [
                 throw new UnitException('from', 'Value ' + value + ' is out of bounce in unit ' + unitFrom + ', type ' + type);
             }
             var result = conversionObject[type][unitTo].compute(SiValue);
-            if (precision) {
+            if ((precision) && ('number' === typeof result)) {
                 var dec = Math.pow(10, precision);
                 return Math.round(result*dec) / dec;
             } else {

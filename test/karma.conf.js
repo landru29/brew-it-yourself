@@ -28,6 +28,7 @@ module.exports = function (config) {
             'app/scripts/services/unitsConversionService.js', //Force loading this file first to avoid injection error with brewService.js
             'app/scripts/**/*.js',
             'test/spec/**/*.js',
+            'test/fixtures/fixture.js',
             'test/fixtures/*.js',
             
             // fixtures

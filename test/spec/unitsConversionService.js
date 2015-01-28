@@ -57,9 +57,20 @@ describe('BrewItYourself.unitsConversionService', function () {
         expect(service.fromTo(60, 'temperature.fahrenheit', 'kelvin', {precision:3})).toBe(288.706);
     });
     
-    it('Should convert color', function() {});
+    it('Should convert color', function() {
+        expect(service.fromTo(30, 'color.ebc', 'srm', {precision:3})).toBe(15.228);
+        expect(service.fromTo(10, 'color.ebc', 'rgb', {precision:3})).toBe('#e08024');
+        expect(service.fromTo(30, 'color.ebc', 'lovibond', {precision:3})).toBe(11.803);
+        expect(service.fromTo(30, 'color.ebc', 'mcu', {precision:3})).toBe(28.299);
     
-    it('Should convert sugar', function() {});
+    });
+    
+    it('Should convert sugar', function() {
+        expect(service.fromTo(30, 'sugar.plato', 'brix', {precision:3})).toBe(30.025);
+        expect(service.fromTo(30, 'sugar.plato', 'sg', {precision:3})).toBe(1.129);
+        expect(service.fromTo(30, 'sugar.plato', 'alcohol', {precision:3})).toBe(0.17);
+        expect(service.fromTo(30, 'sugar.plato', 'gPerLiter', {precision:3})).toBe(323.599);
+    });
     
     it('Should convert mass', function() {
         expect(service.fromTo(10, 'mass.kg', 'g')).toBe(10000);
@@ -67,6 +78,16 @@ describe('BrewItYourself.unitsConversionService', function () {
         expect(service.fromTo(10, 'mass.mg', 'g')).toBe(0.01);
     });
     
-    it('Should convert volume', function() {});
+    it('Should convert volume', function() {
+        expect(service.fromTo(10, 'volume.l', 'ml')).toBe(10000);
+        expect(service.fromTo(10, 'volume.l', 'cl')).toBe(1000);
+        expect(service.fromTo(1000, 'volume.ml', 'dm3')).toBe(1);
+        expect(service.fromTo(1000, 'volume.l', 'm3')).toBe(1);
+        expect(service.fromTo(10, 'volume.l', 'cm3')).toBe(10000);
+        expect(service.fromTo(10, 'volume.ml', 'mm3')).toBe(10000);
+        expect(service.fromTo(10, 'volume.gal-en', 'l', {precision:3})).toBe(37.879);
+        expect(service.fromTo(10, 'volume.gal-us', 'l', {precision:3})).toBe(45.455);
+        expect(service.fromTo(10, 'volume.pinte', 'l', {precision:3})).toBe(5.682);
+    });
 
 });
