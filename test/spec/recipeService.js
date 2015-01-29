@@ -8,13 +8,10 @@ describe('BrewItYourself.recipeService', function () {
     }));
 
     it('Should find all functions', function () {
+        expect(service.Ingredient).toBeDefined();
         expect(service.Step).toBeDefined();
         expect(service.Recipe).toBeDefined();
         expect(service.generateUUID).toBeDefined();
-        expect(service.getIngredient).toBeDefined();
-        expect(service.getFermentableMass).toBeDefined();
-        expect(service.getHops).toBeDefined();
-        expect(service.getLiquidVolume).toBeDefined();
     });
 
     it('Should create a step', function () {
@@ -33,30 +30,44 @@ describe('BrewItYourself.recipeService', function () {
         expect(Object.keys(recipe)).toContain('uuid');
         expect(Object.keys(recipe)).toContain('steps');
     });
+    
+    it('Should load a recipe', function() {
+        var recipe = new service.Recipe(fixture.recipe);
+        expect(recipe.steps.length).toBe(7);
+        expect(recipe.steps[0].ingredients.length).toBe(2);
+    });
+    
+    it('Should create an Ingredient', function () {
+        var ingredient = new service.Ingredient();
+    });
 
     it('Liquid volume', function () {
-        expect(service.getLiquidVolume(fixture.recipe)).toBe(35);
+        var recipe = new service.Recipe(fixture.recipe);
+        expect(recipe.getLiquidVolume()).toBe(35);
     });
 
     it('Hops detail', function () {
-        expect(service.getHops(fixture.recipe).length).toBe(2);
-        expect(service.getHops(fixture.recipe)[0].alpha).toBeDefined();
-        expect(service.getHops(fixture.recipe)[0].mass).toBeDefined();
-        expect(service.getHops(fixture.recipe)[0].lasting).toBeDefined();
+        var recipe = new service.Recipe(fixture.recipe);
+        expect(recipe.getHops().length).toBe(2);
+        expect(recipe.getHops()[0].alpha).toBeDefined();
+        expect(recipe.getHops()[0].mass).toBeDefined();
+        expect(recipe.getHops()[0].lasting).toBeDefined();
     });
 
     it('Fermentable detail', function () {
-        expect(service.getFermentableMass(fixture.recipe).length).toBe(1);
-        expect(service.getFermentableMass(fixture.recipe)[0].mass).toBeDefined();
-        expect(service.getFermentableMass(fixture.recipe)[0].yield).toBeDefined();
-        expect(service.getFermentableMass(fixture.recipe)[0].color).toBeDefined();
+        var recipe = new service.Recipe(fixture.recipe);
+        expect(recipe.getFermentableMass().length).toBe(1);
+        expect(recipe.getFermentableMass()[0].mass).toBeDefined();
+        expect(recipe.getFermentableMass()[0].yield).toBeDefined();
+        expect(recipe.getFermentableMass()[0].color).toBeDefined();
     });
 
     it('Ingredient detail', function () {
-        expect(service.getIngredient(fixture.recipe, {
+        var recipe = new service.Recipe(fixture.recipe);
+        expect(recipe.getIngredients({
             type: 'water'
         }).length).toBe(2);
-        expect(service.getIngredient(fixture.recipe, {
+        expect(recipe.getIngredients({
             type: 'water'
         })[0].type).toBe('water');
     });

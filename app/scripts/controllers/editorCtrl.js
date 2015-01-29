@@ -45,29 +45,29 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         };
 
         $scope.getRinsingWater = function () {
-            var liquidVol = recipe.getLiquidVolume($scope.recipe);
+            var liquidVol = $scope.recipe.getLiquidVolume();
             var mashingVolume = $scope.getMashingVolume();
             return (liquidVol > mashingVolume ? liquidVol - mashingVolume : 0);
         };
 
         $scope.getMashingVolume = function () {
-            var grain = recipe.getFermentableMass($scope.recipe);
+            var grain = $scope.recipe.getFermentableMass();
             return brew.mashingVolume(grain);
         };
 
         $scope.getFinalVolume = function () {
-            var liquidInitialVol = recipe.getLiquidVolume($scope.recipe);
-            var grain = recipe.getFermentableMass($scope.recipe);
+            var liquidInitialVol = $scope.recipe.getLiquidVolume();
+            var grain = $scope.recipe.getFermentableMass();
             return brew.liquidEstimation(liquidInitialVol, grain);
         };
 
         $scope.getInitialGravity = function () {
-            var grain = recipe.getFermentableMass($scope.recipe);
+            var grain = $scope.recipe.getFermentableMass();
             return brew.gravityEstimation(grain, $scope.getFinalVolume());
         };
 
         $scope.getIbu = function () {
-            var hops = recipe.getHops($scope.recipe);
+            var hops = $scope.recipe.getHops();
             return brew.ibuEstimation(hops, $scope.getInitialGravity(), $scope.getFinalVolume());
         };
 
@@ -76,7 +76,7 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         };
 
         $scope.estimateSRM = function () {
-            var grain = recipe.getFermentableMass($scope.recipe);
+            var grain = $scope.recipe.getFermentableMass();
             var liquid = $scope.getFinalVolume();
             var srm = brew.estimateSRM(grain, liquid);
             return brew.estimateSRM(grain, liquid);
@@ -199,7 +199,7 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         });
 
         if ($localStorage.current) {
-            $scope.recipe = $localStorage.current;
+            $scope.recipe = new recipe.Recipe($localStorage.current);
         } else {
             $scope.newRecipe();
         }
