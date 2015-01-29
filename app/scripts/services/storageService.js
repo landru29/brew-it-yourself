@@ -1,5 +1,5 @@
 /*global angular */
-angular.module('BrewItYourself').service('storageService', ['$localStorage', 'util', '$http', '$q',  function ($localStorage, util, $http, $q) {
+angular.module('BrewItYourself').service('storageService', ['$localStorage', '$http', '$q',  function ($localStorage, $http, $q) {
     'use strict';
     
     var saveAllRecipes = function (allRecipes) {
@@ -23,7 +23,6 @@ angular.module('BrewItYourself').service('storageService', ['$localStorage', 'ut
             defered.resolve(JSON.parse($localStorage.allRecipes));
         }
         return defered.promise;
-        //return $localStorage.allRecipes ? JSON.parse($localStorage.allRecipes) : {};
     };
     
     this.getAllrecipes = function () {
@@ -32,7 +31,7 @@ angular.module('BrewItYourself').service('storageService', ['$localStorage', 'ut
     
     this.save = function (recipe) {
         loadAllRecipes().then(function (allRecipes) {
-            allRecipes[recipe.uuid] = util.cleanObject(JSON.parse(JSON.stringify(recipe)));
+            allRecipes[recipe.uuid] = JSON.parse(recipe.stringify());
             saveAllRecipes(allRecipes);
         });
     };

@@ -19,7 +19,7 @@ angular.module('BrewItYourself').provider('ingredient', [ function () {
         }
     };
 
-    this.$get = ['$http', '$q', 'util', function ($http, $q, util) {
+    this.$get = ['$http', '$q', function ($http, $q) {
         return {
             loadData: function (path) {
                 var defered = $q.defer();
@@ -47,7 +47,7 @@ angular.module('BrewItYourself').provider('ingredient', [ function () {
             },
             getIngredients: function (chapter) {
                 if (database[chapter]) {
-                    return angular.extend(util.cleanObject(database[chapter]), {type: chapter});
+                    return angular.extend(JSON.parse(JSON.stringify(database[chapter])), {type: chapter});
                 }
                 return null;
             }

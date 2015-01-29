@@ -1,5 +1,5 @@
 /*global angular */
-angular.module('BrewItYourself').controller('ModalIngredientPickCtrl', ['$scope', '$modalInstance', 'ingredient', 'util', function ($scope, $modalInstance, ingredient, util) {
+angular.module('BrewItYourself').controller('ModalIngredientPickCtrl', ['$scope', '$modalInstance', 'ingredient', function ($scope, $modalInstance, ingredient) {
     'use strict';
 
     $scope.treeData = ingredient.getTreeIngredients();
@@ -13,7 +13,7 @@ angular.module('BrewItYourself').controller('ModalIngredientPickCtrl', ['$scope'
     
     $scope.$watch('ingredient.currentNode', function (newVal, oldVal) {
         if (newVal) {
-            $modalInstance.close(util.duplicate(newVal));
+            $modalInstance.close(JSON.parse(JSON.stringify(newVal)));
         }
     });
     

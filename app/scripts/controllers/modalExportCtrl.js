@@ -1,9 +1,9 @@
 /*global angular */
-angular.module('BrewItYourself').controller('ModalExportCtrl', ['$scope', '$filter', '$modalInstance', 'unitsConversion', 'util', 'thisRecipe',
-    function ($scope, $filter, $modalInstance, unitsConversion, util, thisRecipe) {
+angular.module('BrewItYourself').controller('ModalExportCtrl', ['$scope', '$filter', '$modalInstance', 'unitsConversion', 'thisRecipe',
+    function ($scope, $filter, $modalInstance, unitsConversion, thisRecipe) {
         'use strict';
 
-        $scope.recipe = util.cleanObject(JSON.parse(JSON.stringify(thisRecipe)));
+        $scope.recipe = JSON.parse(thisRecipe.stringify());
         delete $scope.recipe.uuid;
         $scope.jsonRecipe = JSON.stringify($scope.recipe);
         

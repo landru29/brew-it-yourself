@@ -1,6 +1,6 @@
 /*global angular */
-angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope', '$localStorage', '$modal', 'messageService', 'storageService', 'util', 'recipe', 'brew', '$timeout',
-    function ($scope, $rootScope, $localStorage, $modal, messageService, storageService, util, recipe, brew, $timeout) {
+angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope', '$localStorage', '$modal', 'messageService', 'storageService', 'recipe', 'brew', '$timeout',
+    function ($scope, $rootScope, $localStorage, $modal, messageService, storageService, recipe, brew, $timeout) {
         "use strict";
 
         $scope.insertIngredient = function (step) {
