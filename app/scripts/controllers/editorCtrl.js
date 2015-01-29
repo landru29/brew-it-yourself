@@ -106,8 +106,7 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
                 }
             });
             modalInstance.result.then(function (data) {
-                $scope.recipe.steps = [];
-                $scope.recipe = data.recipe;
+                $scope.recipe = new recipe.Recipe(data.recipe);
                 if (data.action === 'import') {
                     $scope.save();
                 }
@@ -130,11 +129,8 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         };
 
         $scope.cloneRecipe = function () {
-            var steps = util.cleanObject(JSON.parse(JSON.stringify($scope.recipe.steps)));
-            $scope.newRecipe({
-                name: $scope.recipe.name + ' (cloned)'
-            });
-            $scope.recipe.steps = steps;
+            $scope.recipe = $scope.recipe.clone();
+            $scope.recipe.name += ' (cloned)';
             storageService.save($scope.recipe);
             $rootScope.$broadcast('display-message', {
                 type: 'success',

@@ -101,6 +101,27 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
         return result;
     };
 
+    Recipe.prototype.stringify = function () {
+        var cleanObject = function (obj) {
+            for (var i in obj) {
+                if (i[0] === '$') {
+                    delete obj[i];
+                } else if ('object' === typeof obj[i]) {
+                    cleanObject(obj[i]);
+                }
+            }
+            return obj;
+        };
+        var clonedObject = cleanObject(JSON.parse(JSON.stringify(this)));
+        return JSON.stringify(clonedObject);
+    };
+    
+    Recipe.prototype.clone = function() {
+        var cloned = new Recipe(JSON.parse(this.stringify()));
+        cloned.uuid = generateLocalUUID();
+        return cloned;
+    }
+
     /*******************************************************************************/
     /** Define Step Object                                                        **/
     /*******************************************************************************/
@@ -128,7 +149,7 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
             }
         }
     };
-    
+
     Step.prototype.getMinutes = function () {
         return this.lasting.minutes + this.lasting.hours * 60 + this.lasting.days * 60 * 24;
     };
