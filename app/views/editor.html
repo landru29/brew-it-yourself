@@ -20,7 +20,7 @@
                 <li><span class="gravity libelized">{{'Initial gravity' | translate}}:</span><span class="badge">{{getInitialGravity() | number:3}}</span></li>
                 <li><span class="hops libelized">{{'IBU' | translate}}:</span><span class="badge">{{getIbu() | number:0}}</span></li>
                 <li><span class="drink libelized">{{'Alcohol' | translate}}:</span><span class="badge">{{getAlcohol() | number:1}} %Vol</span></li>
-                <li><span class="drink libelized">{{'Color' | translate}} (srm):</span><span class="beer-color" style="background: {{estimateSRM().color}}" title="{{'Beer color' | translate}}">{{estimateSRM().srm | number:1}}</span></li>
+                <li><span class="drink libelized">{{'Color' | translate}} (srm):</span><span class="beer-color" style="background: {{estimateSRM().rgb}}" title="{{'Beer color' | translate}}">{{estimateSRM().srm | number:1}}</span></li>
             </ul>
         </div>
     </div>

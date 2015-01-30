@@ -1,6 +1,6 @@
 /*global angular */
-angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope', '$localStorage', '$modal', 'messageService', 'storageService', 'recipe', 'brew', '$timeout',
-    function ($scope, $rootScope, $localStorage, $modal, messageService, storageService, recipe, brew, $timeout) {
+angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope', '$localStorage', '$modal', 'messageService', 'storageService', 'recipe', '$timeout',
+    function ($scope, $rootScope, $localStorage, $modal, messageService, storageService, recipe, $timeout) {
         "use strict";
 
         $scope.insertIngredient = function (step) {
@@ -51,35 +51,27 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         };
 
         $scope.getMashingVolume = function () {
-            var grain = $scope.recipe.getFermentableMass();
-            return brew.mashingVolume(grain);
+            return $scope.recipe.mashingVolume();
         };
 
         $scope.getFinalVolume = function () {
-            var liquidInitialVol = $scope.recipe.getLiquidVolume();
-            var grain = $scope.recipe.getFermentableMass();
-            return brew.liquidEstimation(liquidInitialVol, grain);
+            return $scope.recipe.getLiquidVolume() - $scope.recipe.liquidRetention();
         };
 
         $scope.getInitialGravity = function () {
-            var grain = $scope.recipe.getFermentableMass();
-            return brew.gravityEstimation(grain, $scope.getFinalVolume());
+            return $scope.recipe.gravity();
         };
 
         $scope.getIbu = function () {
-            var hops = $scope.recipe.getHops();
-            return brew.ibuEstimation(hops, $scope.getInitialGravity(), $scope.getFinalVolume());
+            return $scope.recipe.ibuEstimation();
         };
 
         $scope.getAlcohol = function () {
-            return brew.getAlcohol($scope.getInitialGravity()) * 100;
+            return $scope.recipe.getAlcohol() * 100;
         };
 
         $scope.estimateSRM = function () {
-            var grain = $scope.recipe.getFermentableMass();
-            var liquid = $scope.getFinalVolume();
-            var srm = brew.estimateSRM(grain, liquid);
-            return brew.estimateSRM(grain, liquid);
+            return $scope.recipe.estimateColor();
         };
 
         /*************************************************/

@@ -71,5 +71,47 @@ describe('BrewItYourself.recipeService', function () {
             type: 'water'
         })[0].type).toBe('water');
     });
+    
+    it('Should compute mashing volume', function () {
+        var recipe = new service.Recipe(fixture.recipe);
+        expect(recipe.mashingVolume()).toBe(15);
+    });
+    
+    it('Should compute liquid retention', function () {
+        var recipe = new service.Recipe(fixture.recipe);
+        expect(recipe.liquidRetention()).toBe(5);
+    });
+    
+    it('Should compute sugar mass', function () {
+        var recipe = new service.Recipe(fixture.recipe);
+        expect(Math.round(recipe.sugarMassEstimation() * 1000) / 1000).toBe(3.645);
+    });
+    
+    it('Should compute gravity', function () {
+        var recipe = new service.Recipe(fixture.recipe);
+        expect(Math.round(recipe.gravity() * 1000) / 1000).toBe(1.042);
+    });
+    
+    it('Should compute IBU', function () {
+        var recipe = new service.Recipe(fixture.recipe);
+        expect(Math.round(recipe.ibuEstimation() * 10) / 10).toBe(27.2);
+    });
+    
+    it('Should compute Alcohol', function () {
+        var recipe = new service.Recipe(fixture.recipe);
+        expect(Math.round(recipe.getAlcohol() * 1000) / 10).toBe(3.5);
+    });
 
+    it('Should estimate color', function () {
+        var recipe = new service.Recipe(fixture.recipe);
+        var color = recipe.estimateColor();
+        expect(color.rgb).toBe('#f2bd6b');
+        expect(Math.round(color.srm * 1000) / 1000).toBe(2.027);
+    });
+    
+     it('Should compute remaining time', function () {
+        var recipe = new service.Recipe(fixture.recipe);
+        expect(recipe.getTime(recipe.steps[0], recipe.steps[recipe.steps.length-2])).toBe(205);
+    });
+    
 });
