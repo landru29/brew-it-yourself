@@ -333,10 +333,8 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
                     break;
                 case 'lasting': {
                     if (Object.prototype.toString.call(data.lasting) === '[object Object]') {
-                        console.log('conversion');
                         this.lasting = data.lasting.minutes + data.lasting.hours * 60 + data.lasting.days * 60 *24;
                     } else {
-                        console.log('no conversion');
                         this.lasting = data.lasting;
                     }
                     break;
