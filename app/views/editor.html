@@ -37,12 +37,8 @@
                         </div>
                         <div class="detail" ng-hide="step.reduced">
                             <div class="lasting">
-                                <label>{{'Lasting' | translate}}:</label> 
-                                <a href="#" editable-number="step.lasting.days" title="{{'Days' | translate}}">{{ step.lasting.days }} {{ 'day(s)' | translate }}</a>
-                                -
-                                <a href="#" editable-number="step.lasting.hours" title="{{'Hours' | translate}}">{{ step.lasting.hours }} {{ 'hour(s)' | translate }}</a>
-                                -
-                                <a href="#" editable-number="step.lasting.minutes" title="{{'Minutes' | translate}}">{{ step.lasting.minutes }} {{ 'minute(s)' | translate }}</a>
+                                <label>{{'Lasting' | translate}}:</label>
+                                <a href="#" lasting-editable="step.lasting" title="{{'lasting' | translate}}">{{ step.lasting | lasting }}</a>
                             </div>
                             <div class="temperature">
                                 <label>{{'Temperature' | translate}}:</label>
@@ -92,8 +88,7 @@
                     <span class="temperature">{{step.temperature | number:0}} °c</span>
                     <span class="time">
                         <i class="glyphicon glyphicon-time"></i>
-                        <span ng-show="step.lasting.days">{{step.lasting.days}} {{'day(s)' | translate}}</span>
-                        <span ng-show="step.lasting.hours || step.lasting.minutes">{{step.lasting.hours | leadingzero:2}}:{{step.lasting.minutes | leadingzero:2}}</span>
+                        <span>{{ step.lasting | lasting }}</span>
                     </span>
                 </div>
                 <ul class="ingredients">

@@ -200,6 +200,7 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
 
         $scope.tutorialStep = ($localStorage.tutorialStep ? $localStorage.tutorialStep : 'start');
         $scope.$watch('recipe', function (newVal, oldVal) {
+            $localStorage.current = newVal;
             if ($scope.tutorialStep === true) {
                 return;
             }

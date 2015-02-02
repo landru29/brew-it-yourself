@@ -320,11 +320,7 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
      */
     var Step = function (data) {
         this.name = '';
-        this.lasting = {
-            minutes: 0,
-            hours: 0,
-            days: 0
-        };
+        this.lasting = 0;
         this.temperature = 20;
         this.ingredients = [];
         if (Object.prototype.toString.call(data) === '[object Object]') {
@@ -335,6 +331,16 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
                         this[i].push(new Ingredient(data[i][igdIndex]));
                     }
                     break;
+                case 'lasting': {
+                    if (Object.prototype.toString.call(data.lasting) === '[object Object]') {
+                        console.log('conversion');
+                        this.lasting = data.lasting.minutes + data.lasting.hours * 60 + data.lasting.days * 60 *24;
+                    } else {
+                        console.log('no conversion');
+                        this.lasting = data.lasting;
+                    }
+                    break;
+                }
                 default:
                     this[i] = data[i];
                 }
@@ -347,7 +353,7 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
      * @returns Float lasting of the step in minutes
      */
     Step.prototype.getMinutes = function () {
-        return this.lasting.minutes + this.lasting.hours * 60 + this.lasting.days * 60 * 24;
+        return this.lasting;
     };
 
     /**
