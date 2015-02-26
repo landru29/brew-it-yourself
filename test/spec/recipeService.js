@@ -89,17 +89,17 @@ describe('BrewItYourself.recipeService', function () {
     
     it('Should compute gravity', function () {
         var recipe = new service.Recipe(fixture.recipe);
-        expect(Math.round(recipe.gravity() * 1000) / 1000).toBe(1.042);
+        expect(Math.round(recipe.gravity() * 1000) / 1000).toBe(1.045);
     });
     
     it('Should compute IBU', function () {
         var recipe = new service.Recipe(fixture.recipe);
-        expect(Math.round(recipe.ibuEstimation() * 10) / 10).toBe(27.2);
+        expect(Math.round(recipe.ibuEstimation() * 10) / 10).toBe(26.2);
     });
     
     it('Should compute Alcohol', function () {
         var recipe = new service.Recipe(fixture.recipe);
-        expect(Math.round(recipe.getAlcohol() * 1000) / 10).toBe(3.5);
+        expect(Math.round(recipe.getAlcohol() * 1000) / 10).toBe(4);
     });
 
     it('Should estimate color', function () {

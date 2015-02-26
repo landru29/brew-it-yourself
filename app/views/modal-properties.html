@@ -1,0 +1,43 @@
+<div class="modal-header">
+    <h3 class="modal-title properties-icon">{{'Properties' | translate}}</h3>
+</div>
+<div class="modal-body">
+    <div class="input-group">
+        <button class="btn btn-primary" ng-click="reset()">{{'Reset' | translate}}</button>
+    </div>
+        
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">{{'Global grain yield' | translate}}</span>
+        <input type="text" class="form-control" aria-describedby="basic-addon1" ng-model="properties.globalGrainYield">
+        <span class="input-group-addon" id="basic-addon2">%</span>
+    </div>
+    
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">{{'Water retention rate (in grain)' | translate}}</span>
+        <input type="text" class="form-control" aria-describedby="basic-addon1" ng-model="properties.waterRetentionRate">
+        <span class="input-group-addon" id="basic-addon2">%</span>
+    </div>
+    
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">{{'Mashing water ratio' | translate}}</span>
+        <input type="text" class="form-control" aria-describedby="basic-addon1" ng-model="properties.mashingWaterRate">
+        <span class="input-group-addon" id="basic-addon2">%</span>
+    </div>
+    
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">{{'Residual gravity' | translate}}</span>
+        <input type="text" class="form-control" aria-describedby="basic-addon1" ng-model="properties.residualGravity">
+        <span class="input-group-addon" id="basic-addon2">Sg</span>
+    </div>
+    
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">{{'Vapor rate' | translate}}</span>
+        <input type="text" class="form-control" aria-describedby="basic-addon1" ng-model="properties.boilingLostRate">
+        <span class="input-group-addon" id="basic-addon2">%</span>
+    </div>
+    
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">{{'OK' | translate}}</button>
+    <button class="btn btn-warning" ng-click="cancel()">{{'Cancel' | translate}}</button>
+</div>

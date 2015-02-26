@@ -29,6 +29,11 @@ div.main-menu ul li {
     border-radius: 4px;
 }
 
+div.main-menu ul li.properties-icon,.modal-dialog h3.properties-icon {
+    background: url('img/icon-properties.png') no-repeat -24px 5px;
+    padding-left: 26px;
+}
+
 div.main-menu ul li.toolbox-icon,.modal-dialog h3.toolbox-icon {
     background: url('img/icon-toolbox.png') no-repeat -24px 5px;
     padding-left: 26px;

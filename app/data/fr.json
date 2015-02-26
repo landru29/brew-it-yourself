@@ -1,5 +1,6 @@
 {
     "Tools": "Outils",
+    "Properties": "Propriétés",
     "Trash": "Poubelle",
     "Clone": "Cloner",
     "New": "Nouveau",
@@ -63,6 +64,11 @@
     "Specify the lasting and the temperature of the step":"Préciser la durée et la température du palier",
     "Welcome to Brew It Yourself ! I will, now, teach you the basics.":"Bienvenue dans Brew It Yourself ! Je vais, maintenant, vous apprendre les bases.",
     "Your recipe is cloned": "Votre recette est dupliquée",
-    "Your recipe is saved": "Votre recette est enregistrée"
+    "Your recipe is saved": "Votre recette est enregistrée",
+    "Global grain yield": "Performence global du grain",
+    "Water retention rate (in grain)": "Taux de rétention d'eau (dans les grains)",
+    "Mashing water ratio": "Ratio d'eau pour l'empâtage",
+    "Residual gravity": "Densité résiduelle",
+    "Vapor rate": "Taux d'évaporation"
 }
 

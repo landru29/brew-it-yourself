@@ -45,6 +45,7 @@
                         <span class="en clickable" ng-click="changeLang('en')"></span><span class="fr clickable" ng-click="changeLang('fr')"></span>
                     </div>
                     <ul ng-hide="printing" class="ng-cloak">
+                        <li class="properties-icon" ng-click="triggerAction('properties')">{{'Properties' | translate}}</li>
                         <li class="toolbox-icon" ng-click="triggerAction('tools')">{{'Tools' | translate}}</li>
                         <li class="trash-icon" ng-click="triggerAction('trash')">{{'Trash' | translate}}</li>
                         <li class="clone-icon" ng-click="triggerAction('clone')">{{'Clone' | translate}}</li>
@@ -93,6 +94,7 @@
     <script type="text/javascript" src="scripts/controllers/modalRecipeOpenCtrl.js"> </script>
     <script type="text/javascript" src="scripts/controllers/modalIngredientPickCtrl.js"> </script>
     <script type="text/javascript" src="scripts/controllers/modalToolboxCtrl.js"> </script>
+    <script type="text/javascript" src="scripts/controllers/modalPropertiesCtrl.js"> </script>
     <script type="text/javascript" src="scripts/controllers/modalExportCtrl.js"> </script>
     <script type="text/javascript" src="scripts/controllers/toolsCtrl.js"></script>
     <script type="text/javascript" src="scripts/controllers/messageCtrl.js"></script>

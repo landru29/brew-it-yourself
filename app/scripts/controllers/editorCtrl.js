@@ -2,7 +2,10 @@
 angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope', '$localStorage', '$modal', 'messageService', 'storageService', 'recipe', '$timeout',
     function ($scope, $rootScope, $localStorage, $modal, messageService, storageService, recipe, $timeout) {
         "use strict";
+        
+        recipe.Recipe.setProperties($localStorage.properties);
 
+        
         $scope.insertIngredient = function (step) {
             step.$ingredientSelection = true;
             var modalInstance = $modal.open({
@@ -55,7 +58,7 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
         };
 
         $scope.getFinalVolume = function () {
-            return $scope.recipe.getLiquidVolume() - $scope.recipe.liquidRetention();
+            return $scope.recipe.getLiquidVolume() - $scope.recipe.liquidRetention() - $scope.recipe.boilingLiquidLost();
         };
 
         $scope.getInitialGravity = function () {
@@ -180,6 +183,9 @@ angular.module('BrewItYourself').controller('EditorCtrl', ['$scope', '$rootScope
                 break;
             case 'print':
                 $scope.togglePrint();
+                break;
+            case 'reload-recipe':
+                $scope.$apply();
                 break;
             default:
                 break;

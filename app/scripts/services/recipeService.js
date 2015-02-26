@@ -50,12 +50,21 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
     /**
      * Recipe properties
      **/ 
-    Recipe.prototype.properties = {
+    Recipe.prototype.defaultProperties = {
         ibuComputeCurrentMethod: 'tinseth', // method to compute IBU
         globalGrainYield: 90,               // global efficiency of the installation for the extraction of sugar
         waterRetentionRate: 100,            // water retention in the grain in percent
         mashingWaterRate: 300,              // rate to compute recommended volume of water for mashing
-        residualGravity: 1.015              // residual gravity after fermentation (used in the alcohol estimation)
+        residualGravity: 1.015,             // residual gravity after fermentation (used in the alcohol estimation)
+        boilingLostRate: 10
+    };
+    
+    Recipe.prototype.properties = JSON.parse(JSON.stringify(Recipe.prototype.defaultProperties));
+    
+    Recipe.setProperties = function(properties) {
+        for(var i in properties) {
+            Recipe.prototype.properties[i] = properties[i];
+        }
     };
     
     /**
@@ -223,6 +232,14 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
         }
         return grainMass * this.properties.waterRetentionRate / 100;
     };
+    
+    /**
+     * Compute the liquid volume at the end of the process
+     * @returns Float final volume, in liter of the liquid
+     */
+    Recipe.prototype.boilingLiquidLost = function() {
+        return (this.getLiquidVolume() - this.liquidRetention()) * (this.properties.boilingLostRate)/100;
+    };
 
     /**
      * Compute the recommended volume of water for mashing
@@ -255,7 +272,7 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
      * @returns Float gravity in sg
      */
     Recipe.prototype.gravity = function () {
-        var liquidVol = this.getLiquidVolume();
+        var liquidVol = this.getLiquidVolume() - this.boilingLiquidLost();
         var sugarMass = this.sugarMassEstimation();
         if (!liquidVol) {
             return 1.0;
