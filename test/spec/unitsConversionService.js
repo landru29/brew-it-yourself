@@ -69,7 +69,7 @@ describe('BrewItYourself.unitsConversionService', function () {
         expect(service.fromTo(30, 'sugar.plato', 'brix', {precision:3})).toBe(30.025);
         expect(service.fromTo(30, 'sugar.plato', 'sg', {precision:3})).toBe(1.129);
         expect(service.fromTo(30, 'sugar.plato', 'alcohol', {precision:3})).toBe(0.17);
-        expect(service.fromTo(30, 'sugar.plato', 'gPerLiter', {precision:3})).toBe(323.599);
+        expect(service.fromTo(30, 'sugar.plato', 'gPerLiter', {precision:3})).toBe(300.249);
     });
     
     it('Should convert mass', function() {
