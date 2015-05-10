@@ -12,7 +12,7 @@ angular.module('BrewItYourself').filter('lasting', ['$filter', function ($filter
         var hours = '00' + (Math.floor((data - days * 24 * 60) / 60));
         var minutes = '00' + (data - days * 24 * 60 - hours * 60);
         var result = [];
-        if (days || hours || minutes) {
+        if (days || parseInt(hours,0) || parseInt(minutes,0)) {
             if (days) {
                 result.push(days + ' ' + $filter('translate')(trad.day));
             }

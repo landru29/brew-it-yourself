@@ -180,10 +180,16 @@ angular.module('BrewItYourself').provider('unitsConversion', [
                     a0: -5881.25865,
                     a1: 9098.641778,
                     a2: -3216.783128
-                })*/
+                })
                 gPerLiter: new Polynome({
                     a0: -2503.6363636389,
                     a1: 2503.6363636389
+                })*/
+                gPerLiter: new Polynome({ // sg -> grams per liter
+                    a3: 1824.601,
+                    a2: -7756.821,
+                    a1: 12627.794,
+                    a0: -6695.622
                 })
             },
             mass: {

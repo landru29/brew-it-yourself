@@ -49,24 +49,24 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
 
     /**
      * Recipe properties
-     **/ 
+     **/
     Recipe.prototype.defaultProperties = {
         ibuComputeCurrentMethod: 'tinseth', // method to compute IBU
-        globalGrainYield: 90,               // global efficiency of the installation for the extraction of sugar
-        waterRetentionRate: 100,            // water retention in the grain in percent
-        mashingWaterRate: 300,              // rate to compute recommended volume of water for mashing
-        residualGravity: 1.015,             // residual gravity after fermentation (used in the alcohol estimation)
+        globalGrainYield: 90, // global efficiency of the installation for the extraction of sugar
+        waterRetentionRate: 100, // water retention in the grain in percent
+        mashingWaterRate: 300, // rate to compute recommended volume of water for mashing
+        residualGravity: 1.015, // residual gravity after fermentation (used in the alcohol estimation)
         boilingLostRate: 10
     };
-    
+
     Recipe.prototype.properties = JSON.parse(JSON.stringify(Recipe.prototype.defaultProperties));
-    
-    Recipe.setProperties = function(properties) {
-        for(var i in properties) {
+
+    Recipe.setProperties = function (properties) {
+        for (var i in properties) {
             Recipe.prototype.properties[i] = properties[i];
         }
     };
-    
+
     /**
      * Get all the ingredients of the recipe
      * @param   {[[Type]]} filter [[Description]]
@@ -110,16 +110,18 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
         var hops = this.getIngredients({
             type: 'hop'
         });
-        var lastHoppingStep = hops[hops.length-1].step;
         var result = [];
-        for (var index in hops) {
-            var qty = hops[index].qty;
-            if (qty) {
-                result.push({
-                    mass: unitsConversionProvider.fromTo(qty.value, qty.unit.type, 'g'),
-                    alpha: hops[index].alpha,
-                    lasting: this.getTime(hops[index].step, lastHoppingStep)
-                });
+        if (hops.length > 0) {
+            var lastHoppingStep = hops[hops.length - 1].step;
+            for (var index in hops) {
+                var qty = hops[index].qty;
+                if (qty) {
+                    result.push({
+                        mass: unitsConversionProvider.fromTo(qty.value, qty.unit.type, 'g'),
+                        alpha: hops[index].alpha,
+                        lasting: this.getTime(hops[index].step, lastHoppingStep)
+                    });
+                }
             }
         }
         return result;
@@ -179,11 +181,11 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
      * @param Float volumeL      volume of liquid in liter
      * @param Float gravitySg    gravity of the liquid in Sg
      * @param Float lastingMin   time during which the hops is in the boiling liquide
-     **/ 
+     **/
     Recipe.prototype.ibuComputeMethods = {
         rager: function (alphaAcidity, massGr, volumeL, gravitySg, lastingMin) {
-            var ga = (gravitySg > 1.050 ? (gravitySg - 1.050) / 0.2 : 1);
-            var utilization = 18.11 + 13.86 * Math.tanh((lastingMin - 31.32) / 18.27);
+            var ga = (gravitySg > 1.050 ? (gravitySg - 1.050) / 0.2 : 0);
+            var utilization = 18.109069 + 13.862039 * Math.tanh((lastingMin - 31.322749) / 18.267743);
             return massGr * utilization * alphaAcidity * 1000 / (volumeL * (1 + ga));
         },
         /*garetz: function (alphaAcidity, massGr, volumeL, gravitySg, lastingMin) {
@@ -232,13 +234,13 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
         }
         return grainMass * this.properties.waterRetentionRate / 100;
     };
-    
+
     /**
      * Compute the liquid volume at the end of the process
      * @returns Float final volume, in liter of the liquid
      */
-    Recipe.prototype.boilingLiquidLost = function() {
-        return (this.getLiquidVolume() - this.liquidRetention()) * (this.properties.boilingLostRate)/100;
+    Recipe.prototype.boilingLiquidLost = function () {
+        return (this.getLiquidVolume() - this.liquidRetention()) * (this.properties.boilingLostRate) / 100;
     };
 
     /**
@@ -316,10 +318,10 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
      */
     Recipe.prototype.getTime = function (stepStart, stepEnd) {
         var indexStart = this.steps.indexOf(stepStart);
-        var indexEnd = (stepEnd ? this.steps.indexOf(stepEnd) : this.steps.length-1);
+        var indexEnd = (stepEnd ? this.steps.indexOf(stepEnd) : this.steps.length - 1);
         var result = 0;
         if (indexStart > -1) {
-            for(var i = indexStart; i <= indexEnd; i++) {
+            for (var i = indexStart; i <= indexEnd; i++) {
                 result += this.steps[i].getMinutes();
             }
         }
@@ -348,14 +350,15 @@ angular.module('BrewItYourself').provider('recipe', ['unitsConversionProvider', 
                         this[i].push(new Ingredient(data[i][igdIndex]));
                     }
                     break;
-                case 'lasting': {
-                    if (Object.prototype.toString.call(data.lasting) === '[object Object]') {
-                        this.lasting = data.lasting.minutes + data.lasting.hours * 60 + data.lasting.days * 60 *24;
-                    } else {
-                        this.lasting = data.lasting;
+                case 'lasting':
+                    {
+                        if (Object.prototype.toString.call(data.lasting) === '[object Object]') {
+                            this.lasting = data.lasting.minutes + data.lasting.hours * 60 + data.lasting.days * 60 * 24;
+                        } else {
+                            this.lasting = data.lasting;
+                        }
+                        break;
                     }
-                    break;
-                }
                 default:
                     this[i] = data[i];
                 }
